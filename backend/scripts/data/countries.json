@@ -1,0 +1,1497 @@
+[
+    {
+      "code": "AFG",
+      "name": "Afghanistan",
+      "region": "Asia",
+      "subRegion": "Southern Asia"
+    },
+    {
+      "code": "ALA",
+      "name": "Åland Islands",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "ALB",
+      "name": "Albania",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "DZA",
+      "name": "Algeria",
+      "region": "Africa",
+      "subRegion": "Northern Africa"
+    },
+    {
+      "code": "ASM",
+      "name": "American Samoa",
+      "region": "Oceania",
+      "subRegion": "Polynesia"
+    },
+    {
+      "code": "AND",
+      "name": "Andorra",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "AGO",
+      "name": "Angola",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "AIA",
+      "name": "Anguilla",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "ATA",
+      "name": "Antarctica",
+      "region": "",
+      "subRegion": ""
+    },
+    {
+      "code": "ATG",
+      "name": "Antigua and Barbuda",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "ARG",
+      "name": "Argentina",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "ARM",
+      "name": "Armenia",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "ABW",
+      "name": "Aruba",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "AUS",
+      "name": "Australia",
+      "region": "Oceania",
+      "subRegion": "Australia and New Zealand"
+    },
+    {
+      "code": "AUT",
+      "name": "Austria",
+      "region": "Europe",
+      "subRegion": "Western Europe"
+    },
+    {
+      "code": "AZE",
+      "name": "Azerbaijan",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "BHS",
+      "name": "Bahamas",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "BHR",
+      "name": "Bahrain",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "BGD",
+      "name": "Bangladesh",
+      "region": "Asia",
+      "subRegion": "Southern Asia"
+    },
+    {
+      "code": "BRB",
+      "name": "Barbados",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "BLR",
+      "name": "Belarus",
+      "region": "Europe",
+      "subRegion": "Eastern Europe"
+    },
+    {
+      "code": "BEL",
+      "name": "Belgium",
+      "region": "Europe",
+      "subRegion": "Western Europe"
+    },
+    {
+      "code": "BLZ",
+      "name": "Belize",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "BEN",
+      "name": "Benin",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "BMU",
+      "name": "Bermuda",
+      "region": "Americas",
+      "subRegion": "Northern America"
+    },
+    {
+      "code": "BTN",
+      "name": "Bhutan",
+      "region": "Asia",
+      "subRegion": "Southern Asia"
+    },
+    {
+      "code": "BOL",
+      "name": "Bolivia, Plurinational State of",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "BES",
+      "name": "Bonaire, Sint Eustatius and Saba",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "BIH",
+      "name": "Bosnia and Herzegovina",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "BWA",
+      "name": "Botswana",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "BVT",
+      "name": "Bouvet Island",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "BRA",
+      "name": "Brazil",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "IOT",
+      "name": "British Indian Ocean Territory",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "BRN",
+      "name": "Brunei Darussalam",
+      "region": "Asia",
+      "subRegion": "South-eastern Asia"
+    },
+    {
+      "code": "BGR",
+      "name": "Bulgaria",
+      "region": "Europe",
+      "subRegion": "Eastern Europe"
+    },
+    {
+      "code": "BFA",
+      "name": "Burkina Faso",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "BDI",
+      "name": "Burundi",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "CPV",
+      "name": "Cabo Verde",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "KHM",
+      "name": "Cambodia",
+      "region": "Asia",
+      "subRegion": "South-eastern Asia"
+    },
+    {
+      "code": "CMR",
+      "name": "Cameroon",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "CAN",
+      "name": "Canada",
+      "region": "Americas",
+      "subRegion": "Northern America"
+    },
+    {
+      "code": "CYM",
+      "name": "Cayman Islands",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "CAF",
+      "name": "Central African Republic",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "TCD",
+      "name": "Chad",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "CHL",
+      "name": "Chile",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "CHN",
+      "name": "China",
+      "region": "Asia",
+      "subRegion": "Eastern Asia"
+    },
+    {
+      "code": "CXR",
+      "name": "Christmas Island",
+      "region": "Oceania",
+      "subRegion": "Australia and New Zealand"
+    },
+    {
+      "code": "CCK",
+      "name": "Cocos (Keeling) Islands",
+      "region": "Oceania",
+      "subRegion": "Australia and New Zealand"
+    },
+    {
+      "code": "COL",
+      "name": "Colombia",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "COM",
+      "name": "Comoros",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "COG",
+      "name": "Congo",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "COD",
+      "name": "Congo, Democratic Republic of the",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "COK",
+      "name": "Cook Islands",
+      "region": "Oceania",
+      "subRegion": "Polynesia"
+    },
+    {
+      "code": "CRI",
+      "name": "Costa Rica",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "CIV",
+      "name": "Côte d'Ivoire",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "HRV",
+      "name": "Croatia",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "CUB",
+      "name": "Cuba",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "CUW",
+      "name": "Curaçao",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "CYP",
+      "name": "Cyprus",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "CZE",
+      "name": "Czechia",
+      "region": "Europe",
+      "subRegion": "Eastern Europe"
+    },
+    {
+      "code": "DNK",
+      "name": "Denmark",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "DJI",
+      "name": "Djibouti",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "DMA",
+      "name": "Dominica",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "DOM",
+      "name": "Dominican Republic",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "ECU",
+      "name": "Ecuador",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "EGY",
+      "name": "Egypt",
+      "region": "Africa",
+      "subRegion": "Northern Africa"
+    },
+    {
+      "code": "SLV",
+      "name": "El Salvador",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "GNQ",
+      "name": "Equatorial Guinea",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "ERI",
+      "name": "Eritrea",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "EST",
+      "name": "Estonia",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "SWZ",
+      "name": "Eswatini",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "ETH",
+      "name": "Ethiopia",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "FLK",
+      "name": "Falkland Islands (Malvinas)",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "FRO",
+      "name": "Faroe Islands",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "FJI",
+      "name": "Fiji",
+      "region": "Oceania",
+      "subRegion": "Melanesia"
+    },
+    {
+      "code": "FIN",
+      "name": "Finland",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "FRA",
+      "name": "France",
+      "region": "Europe",
+      "subRegion": "Western Europe"
+    },
+    {
+      "code": "GUF",
+      "name": "French Guiana",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "PYF",
+      "name": "French Polynesia",
+      "region": "Oceania",
+      "subRegion": "Polynesia"
+    },
+    {
+      "code": "ATF",
+      "name": "French Southern Territories",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "GAB",
+      "name": "Gabon",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "GMB",
+      "name": "Gambia",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "GEO",
+      "name": "Georgia",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "DEU",
+      "name": "Germany",
+      "region": "Europe",
+      "subRegion": "Western Europe"
+    },
+    {
+      "code": "GHA",
+      "name": "Ghana",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "GIB",
+      "name": "Gibraltar",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "GRC",
+      "name": "Greece",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "GRL",
+      "name": "Greenland",
+      "region": "Americas",
+      "subRegion": "Northern America"
+    },
+    {
+      "code": "GRD",
+      "name": "Grenada",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "GLP",
+      "name": "Guadeloupe",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "GUM",
+      "name": "Guam",
+      "region": "Oceania",
+      "subRegion": "Micronesia"
+    },
+    {
+      "code": "GTM",
+      "name": "Guatemala",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "GGY",
+      "name": "Guernsey",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "GIN",
+      "name": "Guinea",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "GNB",
+      "name": "Guinea-Bissau",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "GUY",
+      "name": "Guyana",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "HTI",
+      "name": "Haiti",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "HMD",
+      "name": "Heard Island and McDonald Islands",
+      "region": "Oceania",
+      "subRegion": "Australia and New Zealand"
+    },
+    {
+      "code": "VAT",
+      "name": "Holy See",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "HND",
+      "name": "Honduras",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "HKG",
+      "name": "Hong Kong",
+      "region": "Asia",
+      "subRegion": "Eastern Asia"
+    },
+    {
+      "code": "HUN",
+      "name": "Hungary",
+      "region": "Europe",
+      "subRegion": "Eastern Europe"
+    },
+    {
+      "code": "ISL",
+      "name": "Iceland",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "IND",
+      "name": "India",
+      "region": "Asia",
+      "subRegion": "Southern Asia"
+    },
+    {
+      "code": "IDN",
+      "name": "Indonesia",
+      "region": "Asia",
+      "subRegion": "South-eastern Asia"
+    },
+    {
+      "code": "IRN",
+      "name": "Iran, Islamic Republic of",
+      "region": "Asia",
+      "subRegion": "Southern Asia"
+    },
+    {
+      "code": "IRQ",
+      "name": "Iraq",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "IRL",
+      "name": "Ireland",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "IMN",
+      "name": "Isle of Man",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "ISR",
+      "name": "Israel",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "ITA",
+      "name": "Italy",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "JAM",
+      "name": "Jamaica",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "JPN",
+      "name": "Japan",
+      "region": "Asia",
+      "subRegion": "Eastern Asia"
+    },
+    {
+      "code": "JEY",
+      "name": "Jersey",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "JOR",
+      "name": "Jordan",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "KAZ",
+      "name": "Kazakhstan",
+      "region": "Asia",
+      "subRegion": "Central Asia"
+    },
+    {
+      "code": "KEN",
+      "name": "Kenya",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "KIR",
+      "name": "Kiribati",
+      "region": "Oceania",
+      "subRegion": "Micronesia"
+    },
+    {
+      "code": "PRK",
+      "name": "Korea, Democratic People's Republic of",
+      "region": "Asia",
+      "subRegion": "Eastern Asia"
+    },
+    {
+      "code": "KOR",
+      "name": "Korea, Republic of",
+      "region": "Asia",
+      "subRegion": "Eastern Asia"
+    },
+    {
+      "code": "KWT",
+      "name": "Kuwait",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "KGZ",
+      "name": "Kyrgyzstan",
+      "region": "Asia",
+      "subRegion": "Central Asia"
+    },
+    {
+      "code": "LAO",
+      "name": "Lao People's Democratic Republic",
+      "region": "Asia",
+      "subRegion": "South-eastern Asia"
+    },
+    {
+      "code": "LVA",
+      "name": "Latvia",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "LBN",
+      "name": "Lebanon",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "LSO",
+      "name": "Lesotho",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "LBR",
+      "name": "Liberia",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "LBY",
+      "name": "Libya",
+      "region": "Africa",
+      "subRegion": "Northern Africa"
+    },
+    {
+      "code": "LIE",
+      "name": "Liechtenstein",
+      "region": "Europe",
+      "subRegion": "Western Europe"
+    },
+    {
+      "code": "LTU",
+      "name": "Lithuania",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "LUX",
+      "name": "Luxembourg",
+      "region": "Europe",
+      "subRegion": "Western Europe"
+    },
+    {
+      "code": "MAC",
+      "name": "Macao",
+      "region": "Asia",
+      "subRegion": "Eastern Asia"
+    },
+    {
+      "code": "MDG",
+      "name": "Madagascar",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "MWI",
+      "name": "Malawi",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "MYS",
+      "name": "Malaysia",
+      "region": "Asia",
+      "subRegion": "South-eastern Asia"
+    },
+    {
+      "code": "MDV",
+      "name": "Maldives",
+      "region": "Asia",
+      "subRegion": "Southern Asia"
+    },
+    {
+      "code": "MLI",
+      "name": "Mali",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "MLT",
+      "name": "Malta",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "MHL",
+      "name": "Marshall Islands",
+      "region": "Oceania",
+      "subRegion": "Micronesia"
+    },
+    {
+      "code": "MTQ",
+      "name": "Martinique",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "MRT",
+      "name": "Mauritania",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "MUS",
+      "name": "Mauritius",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "MYT",
+      "name": "Mayotte",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "MEX",
+      "name": "Mexico",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "FSM",
+      "name": "Micronesia, Federated States of",
+      "region": "Oceania",
+      "subRegion": "Micronesia"
+    },
+    {
+      "code": "MDA",
+      "name": "Moldova, Republic of",
+      "region": "Europe",
+      "subRegion": "Eastern Europe"
+    },
+    {
+      "code": "MCO",
+      "name": "Monaco",
+      "region": "Europe",
+      "subRegion": "Western Europe"
+    },
+    {
+      "code": "MNG",
+      "name": "Mongolia",
+      "region": "Asia",
+      "subRegion": "Eastern Asia"
+    },
+    {
+      "code": "MNE",
+      "name": "Montenegro",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "MSR",
+      "name": "Montserrat",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "MAR",
+      "name": "Morocco",
+      "region": "Africa",
+      "subRegion": "Northern Africa"
+    },
+    {
+      "code": "MOZ",
+      "name": "Mozambique",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "MMR",
+      "name": "Myanmar",
+      "region": "Asia",
+      "subRegion": "South-eastern Asia"
+    },
+    {
+      "code": "NAM",
+      "name": "Namibia",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "NRU",
+      "name": "Nauru",
+      "region": "Oceania",
+      "subRegion": "Micronesia"
+    },
+    {
+      "code": "NPL",
+      "name": "Nepal",
+      "region": "Asia",
+      "subRegion": "Southern Asia"
+    },
+    {
+      "code": "NLD",
+      "name": "Netherlands, Kingdom of the",
+      "region": "Europe",
+      "subRegion": "Western Europe"
+    },
+    {
+      "code": "NCL",
+      "name": "New Caledonia",
+      "region": "Oceania",
+      "subRegion": "Melanesia"
+    },
+    {
+      "code": "NZL",
+      "name": "New Zealand",
+      "region": "Oceania",
+      "subRegion": "Australia and New Zealand"
+    },
+    {
+      "code": "NIC",
+      "name": "Nicaragua",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "NER",
+      "name": "Niger",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "NGA",
+      "name": "Nigeria",
+      "region": "Africa",
+      "subRegion": "Sub-Saharan Africa"
+    },
+    {
+      "code": "NIU",
+      "name": "Niue",
+      "region": "Oceania",
+      "subRegion": "Polynesia"
+    },
+    {
+      "code": "NFK",
+      "name": "Norfolk Island",
+      "region": "Oceania",
+      "subRegion": "Australia and New Zealand"
+    },
+    {
+      "code": "MKD",
+      "name": "North Macedonia",
+      "region": "Europe",
+      "subRegion": "Southern Europe"
+    },
+    {
+      "code": "MNP",
+      "name": "Northern Mariana Islands",
+      "region": "Oceania",
+      "subRegion": "Micronesia"
+    },
+    {
+      "code": "NOR",
+      "name": "Norway",
+      "region": "Europe",
+      "subRegion": "Northern Europe"
+    },
+    {
+      "code": "OMN",
+      "name": "Oman",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "PAK",
+      "name": "Pakistan",
+      "region": "Asia",
+      "subRegion": "Southern Asia"
+    },
+    {
+      "code": "PLW",
+      "name": "Palau",
+      "region": "Oceania",
+      "subRegion": "Micronesia"
+    },
+    {
+      "code": "PSE",
+      "name": "Palestine, State of",
+      "region": "Asia",
+      "subRegion": "Western Asia"
+    },
+    {
+      "code": "PAN",
+      "name": "Panama",
+      "region": "Americas",
+      "subRegion": "Latin America and the Caribbean"
+    },
+    {
+      "code": "PNG",
+      "name": "Papua New Guinea",
+      "region": "Oceania",
+      "subRegion": "Melanesia"
+    },
+    {
+        "code": "PRY",
+        "name": "Paraguay",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "PER",
+        "name": "Peru",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "PHL",
+        "name": "Philippines",
+        "region": "Asia",
+        "subRegion": "South-eastern Asia"
+    },
+    {
+        "code": "PCN",
+        "name": "Pitcairn",
+        "region": "Oceania",
+        "subRegion": "Polynesia"
+    },
+    {
+        "code": "POL",
+        "name": "Poland",
+        "region": "Europe",
+        "subRegion": "Eastern Europe"
+    },
+    {
+        "code": "PRT",
+        "name": "Portugal",
+        "region": "Europe",
+        "subRegion": "Southern Europe"
+    },
+    {
+        "code": "PRI",
+        "name": "Puerto Rico",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "QAT",
+        "name": "Qatar",
+        "region": "Asia",
+        "subRegion": "Western Asia"
+    },
+    {
+        "code": "REU",
+        "name": "Réunion",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "ROU",
+        "name": "Romania",
+        "region": "Europe",
+        "subRegion": "Eastern Europe"
+    },
+    {
+        "code": "RUS",
+        "name": "Russian Federation",
+        "region": "Europe",
+        "subRegion": "Eastern Europe"
+    },
+    {
+        "code": "RWA",
+        "name": "Rwanda",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "BLM",
+        "name": "Saint Barthélemy",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "SHN",
+        "name": "Saint Helena, Ascension and Tristan da Cunha",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "KNA",
+        "name": "Saint Kitts and Nevis",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "LCA",
+        "name": "Saint Lucia",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "MAF",
+        "name": "Saint Martin (French part)",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "SPM",
+        "name": "Saint Pierre and Miquelon",
+        "region": "Americas",
+        "subRegion": "Northern America"
+    },
+    {
+        "code": "VCT",
+        "name": "Saint Vincent and the Grenadines",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "WSM",
+        "name": "Samoa",
+        "region": "Oceania",
+        "subRegion": "Polynesia"
+    },
+    {
+        "code": "SMR",
+        "name": "San Marino",
+        "region": "Europe",
+        "subRegion": "Southern Europe"
+    },
+    {
+        "code": "STP",
+        "name": "Sao Tome and Principe",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "SAU",
+        "name": "Saudi Arabia",
+        "region": "Asia",
+        "subRegion": "Western Asia"
+    },
+    {
+        "code": "SEN",
+        "name": "Senegal",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "SRB",
+        "name": "Serbia",
+        "region": "Europe",
+        "subRegion": "Southern Europe"
+    },
+    {
+        "code": "SYC",
+        "name": "Seychelles",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "SLE",
+        "name": "Sierra Leone",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "SGP",
+        "name": "Singapore",
+        "region": "Asia",
+        "subRegion": "South-eastern Asia"
+    },
+    {
+        "code": "SXM",
+        "name": "Sint Maarten (Dutch part)",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "SVK",
+        "name": "Slovakia",
+        "region": "Europe",
+        "subRegion": "Eastern Europe"
+    },
+    {
+        "code": "SVN",
+        "name": "Slovenia",
+        "region": "Europe",
+        "subRegion": "Southern Europe"
+    },
+    {
+        "code": "SLB",
+        "name": "Solomon Islands",
+        "region": "Oceania",
+        "subRegion": "Melanesia"
+    },
+    {
+        "code": "SOM",
+        "name": "Somalia",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "ZAF",
+        "name": "South Africa",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "SGS",
+        "name": "South Georgia and the South Sandwich Islands",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "SSD",
+        "name": "South Sudan",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "ESP",
+        "name": "Spain",
+        "region": "Europe",
+        "subRegion": "Southern Europe"
+    },
+    {
+        "code": "LKA",
+        "name": "Sri Lanka",
+        "region": "Asia",
+        "subRegion": "Southern Asia"
+    },
+    {
+        "code": "SDN",
+        "name": "Sudan",
+        "region": "Africa",
+        "subRegion": "Northern Africa"
+    },
+    {
+        "code": "SUR",
+        "name": "Suriname",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "SJM",
+        "name": "Svalbard and Jan Mayen",
+        "region": "Europe",
+        "subRegion": "Northern Europe"
+    },
+    {
+        "code": "SWE",
+        "name": "Sweden",
+        "region": "Europe",
+        "subRegion": "Northern Europe"
+    },
+    {
+        "code": "CHE",
+        "name": "Switzerland",
+        "region": "Europe",
+        "subRegion": "Western Europe"
+    },
+    {
+        "code": "SYR",
+        "name": "Syrian Arab Republic",
+        "region": "Asia",
+        "subRegion": "Western Asia"
+    },
+    {
+        "code": "TWN",
+        "name": "Taiwan, Province of China",
+        "region": "",
+        "subRegion": ""
+    },
+    {
+        "code": "TJK",
+        "name": "Tajikistan",
+        "region": "Asia",
+        "subRegion": "Central Asia"
+    },
+    {
+        "code": "TZA",
+        "name": "Tanzania, United Republic of",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "THA",
+        "name": "Thailand",
+        "region": "Asia",
+        "subRegion": "South-eastern Asia"
+    },
+    {
+        "code": "TLS",
+        "name": "Timor-Leste",
+        "region": "Asia",
+        "subRegion": "South-eastern Asia"
+    },
+    {
+        "code": "TGO",
+        "name": "Togo",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "TKL",
+        "name": "Tokelau",
+        "region": "Oceania",
+        "subRegion": "Polynesia"
+    },
+    {
+        "code": "TON",
+        "name": "Tonga",
+        "region": "Oceania",
+        "subRegion": "Polynesia"
+    },
+    {
+        "code": "TTO",
+        "name": "Trinidad and Tobago",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "TUN",
+        "name": "Tunisia",
+        "region": "Africa",
+        "subRegion": "Northern Africa"
+    },
+    {
+        "code": "TUR",
+        "name": "Türkiye",
+        "region": "Asia",
+        "subRegion": "Western Asia"
+    },
+    {
+        "code": "TKM",
+        "name": "Turkmenistan",
+        "region": "Asia",
+        "subRegion": "Central Asia"
+    },
+    {
+        "code": "TCA",
+        "name": "Turks and Caicos Islands",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "TUV",
+        "name": "Tuvalu",
+        "region": "Oceania",
+        "subRegion": "Polynesia"
+    },
+    {
+        "code": "UGA",
+        "name": "Uganda",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "UKR",
+        "name": "Ukraine",
+        "region": "Europe",
+        "subRegion": "Eastern Europe"
+    },
+    {
+        "code": "ARE",
+        "name": "United Arab Emirates",
+        "region": "Asia",
+        "subRegion": "Western Asia"
+    },
+    {
+        "code": "GBR",
+        "name": "United Kingdom of Great Britain and Northern Ireland",
+        "region": "Europe",
+        "subRegion": "Northern Europe"
+    },
+    {
+        "code": "USA",
+        "name": "United States of America",
+        "region": "Americas",
+        "subRegion": "Northern America"
+    },
+    {
+        "code": "UMI",
+        "name": "United States Minor Outlying Islands",
+        "region": "Oceania",
+        "subRegion": "Micronesia"
+    },
+    {
+        "code": "URY",
+        "name": "Uruguay",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "UZB",
+        "name": "Uzbekistan",
+        "region": "Asia",
+        "subRegion": "Central Asia"
+    },
+    {
+        "code": "VUT",
+        "name": "Vanuatu",
+        "region": "Oceania",
+        "subRegion": "Melanesia"
+    },
+    {
+        "code": "VEN",
+        "name": "Venezuela, Bolivarian Republic of",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "VNM",
+        "name": "Viet Nam",
+        "region": "Asia",
+        "subRegion": "South-eastern Asia"
+    },
+    {
+        "code": "VGB",
+        "name": "Virgin Islands (British)",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "VIR",
+        "name": "Virgin Islands (U.S.)",
+        "region": "Americas",
+        "subRegion": "Latin America and the Caribbean"
+    },
+    {
+        "code": "WLF",
+        "name": "Wallis and Futuna",
+        "region": "Oceania",
+        "subRegion": "Polynesia"
+    },
+    {
+        "code": "ESH",
+        "name": "Western Sahara",
+        "region": "Africa",
+        "subRegion": "Northern Africa"
+    },
+    {
+        "code": "YEM",
+        "name": "Yemen",
+        "region": "Asia",
+        "subRegion": "Western Asia"
+    },
+    {
+        "code": "ZMB",
+        "name": "Zambia",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    },
+    {
+        "code": "ZWE",
+        "name": "Zimbabwe",
+        "region": "Africa",
+        "subRegion": "Sub-Saharan Africa"
+    }
+]
+

@@ -1,0 +1,36 @@
+{
+  "locationType": [
+    "Remote",
+    "Village",
+    "Small Town",
+    "Big Town",
+    "Very very urban"
+  ],
+  "proximityToNature": [
+    "Very much in nature",
+    "Moderate access",
+    "Little access"
+  ],
+  "capacity": [
+    "Up to 7 people",
+    "Between 7 and 15 people",
+    "Between 15 and 30 people",
+    "Between 30 and 60 people",
+    "Between 60 and 100 people",
+    "More than 100 people"
+  ],
+  "selfHostingLevel": [
+    "You do everything",
+    "Some help from the venue",
+    "Quite catered",
+    "They do everything for you"
+  ],
+  "relationToVenue": [
+    "I am the owner / Work at the venue",
+    "I have been to the venue before",
+    "I am a facilitator and hosted at the venue",
+    "I have heard about it",
+    "Other"
+  ]
+}
+
