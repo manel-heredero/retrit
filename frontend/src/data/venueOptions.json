@@ -1,17 +1,17 @@
 {
-  "locationType": [
+  "locationTypes": [
     "Remote",
     "Village",
     "Small Town",
     "Big Town",
     "Very very urban"
   ],
-  "proximityToNature": [
+  "proximityToNatureOptions": [
     "Very much in nature",
     "Moderate access",
     "Little access"
   ],
-  "capacity": [
+  "capacityOptions": [
     "Up to 7 people",
     "Between 7 and 15 people",
     "Between 15 and 30 people",

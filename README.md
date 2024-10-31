@@ -78,11 +78,33 @@ The frontend will run on `http://localhost:5173` by default.
 
 ### Venues
 
-- `GET /api/venues` - Get all venues
-- `GET /api/venues/:id` - Get a specific venue by ID
-- `POST /api/newvenue` - Create a new venue
-- `PUT /api/editvenue/:id` - Update a venue
-- `DELETE /api/deletevenue/:id` - Delete a venue
+- `GET /api/venues` - Get all venues (includes pagination)
+
+  - Query params:
+    - page (default: 1)
+    - limit (default: 6)
+  - Response includes:
+    - success: boolean
+    - currentPage: number
+    - totalPages: number
+    - totalVenues: number
+    - venuesPerPage: number
+    - data: array of venues
+
+- `POST /api/venues` - Create a new venue
+  Required fields in request body:
+  - VenueID: number
+  - venueName: string
+  - countryCode: string
+  - locationType: string
+  - proximityToNature: string
+  - capacity: string
+
+## Data Validation
+
+- URLs must start with http:// or https://
+- Ratings must be between 1 and 5
+- Country codes must be valid ISO 3166 three-letter codes
 
 ## Backend Setup
 

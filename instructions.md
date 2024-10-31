@@ -10,10 +10,10 @@ In short, this is a project with MERN and Vite as framework.
 
 # CORE FUNCTIONALITIES
 
-1. The gallery is shown in the homepage, with a pagination of up to 7 venues per page.
+1. The gallery is shown in the homepage, with a pagination of up to 6 venues per page.
 2. There are two main types of venues: Reviewed Venues and Non-reviewed venues. In any views or filters, the Reviewed Venues are shown on top.
-3. The gallery conains the venues as cards with some basic information (venue name, venue image, reviewed/non-reviewed, country, capacity and type of location)
-4. Also on the homepage the user can filter the venues using three dropdown options (region, capacity and type of location)
+3. The gallery contains the venues as cards with some basic information (venue name, venue image, reviewed/non-reviewed, country, capacity and type of location)
+4. Also on the homepage the user can filter the venues using three dropdown options (region, capacity and type of location). When filtering, it shows the reviewed venues first, then it shows the venues that match the filter but are not reviewed. Finally it shows all other venues that have null in that field.
 5. When clicking on the card, the user is taken to the venue url, which contains all information about the venue.
 6. There is a button to "add venue" with which users can add new venues and review them.
 7. There is no login functionality, but when submitting a venue the user is asked to submit their name and email address (required fields), informing them that that information will be confidential and now shown on the website.
@@ -29,27 +29,33 @@ In short, this is a project with MERN and Vite as framework.
 
 ## FIELDS FOR EACH VENUE
 
-Venue ID
-Venue Name: String
-Country Code: String. Three-letter string from ISO 3166
-Country Name: String. Corresponding to the Country Code as per table in Appendix 1 below.
-Region: String. Corresponding to the Country Code as per table in Appendix 1 below.
-Sub-Region: String. Corresponding to the Country Code as per table in Appendix 1 below.
-Google Maps Link: URL
-Location type: ['Remote', 'Village', 'Small Town', 'Big Town', 'Very very urban']
-Proximity to Nature: ['Very much in nature', 'Moderate access', 'Little access']
-Venue Website: URL
-Capacity: ['Up to 7 people', 'Between 7 and 15 people', 'Between 15 and 30 people', 'Between 30 and 60 people', 'Between 60 and 100 people', 'More than 100 people']
-Food: Rating between 1 and 5 stars
-Veggie/Vegan Friendly?: Boolean
-Can you cook yourself?: Boolean
-Level of Self-Hosting: ['You do everything', 'Some help from the venue', 'Quite catered', 'They do everything for you']
-Sleeping Comfort: Rating between 1 and 5 stars
-Common Spaces: Rating between 1 and 5 stars
-Facilitation Readiness: Rating between 1 and 5 stars
-Overall Rating: Rating between 1 and 5 stars
-Relation to Venue: ['I am the owner / Work at the venue', 'I have been to the venue before', 'I am a facilitator and hosted at the venue', 'I have heard about it', 'Other']
-Image: URL to image
+Required Fields:
+
+- VenueID: Number (unique identifier)
+- Venue Name: String
+- Country Code: String (Three-letter ISO 3166)
+- Location Type: ['Remote', 'Village', 'Small Town', 'Big Town', 'Very very urban']
+- Proximity to Nature: ['Very much in nature', 'Moderate access', 'Little access']
+- Capacity: ['Up to 7 people', 'Between 7 and 15 people', 'Between 15 and 30 people', 'Between 30 and 60 people', 'Between 60 and 100 people', 'More than 100 people']
+
+Auto-populated Fields:
+
+- Country Name: String (derived from Country Code)
+- Region: String (derived from Country Code)
+- Sub-Region: String (derived from Country Code)
+
+Optional Fields:
+
+- Venue Website: URL (must start with http:// or https://)
+- Google Maps Link: URL (must start with http:// or https://)
+- Ratings (all default to null):
+  - Overall Rating: Number (1-5)
+  - Common Spaces Rating: Number (1-5)
+  - Food Rating: Number (1-5)
+  - Sleeping Comfort Rating: Number (1-5)
+- Veggie Friendly: Boolean
+- Can Cook Self: Boolean
+- Image: Mixed type
 
 # DOCUMENTATION
 

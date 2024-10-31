@@ -79,6 +79,9 @@ const venueSchema = new mongoose.Schema({
     foodRating: { type: Number, default: null },
     sleepingComfortRating: { type: Number, default: null },
 
+    // Boolean field to check if the venue has been reviewed (auto-populated)
+    reviewed: { type: Boolean, default: false },
+
     // Other optional fields
     veggieFriendly: { type: Boolean, default: null },
     canCookSelf: { type: Boolean, default: null },
@@ -98,6 +101,33 @@ const venueSchema = new mongoose.Schema({
 }, {
     collection: 'venues',
     timestamps: true
+});
+
+// Middleware to auto-populate the reviewed field
+venueSchema.pre('save', function(next) {
+    // A venue is considered reviewed if it has any rating
+    this.reviewed = Boolean(
+        this.overallRating ||
+        this.commonSpacesRating ||
+        this.foodRating ||
+        this.sleepingComfortRating
+    );
+    next();
+});
+
+// Middleware to auto-populate the reviewed field when updating the venue
+venueSchema.pre('findOneAndUpdate', function(next) {
+    const update = this.getUpdate();
+    const hasRating = Boolean(
+        update.overallRating ||
+        update.commonSpacesRating ||
+        update.foodRating ||
+        update.sleepingComfortRating
+    );
+    
+    // Set the reviewed field based on ratings
+    this.set({ reviewed: hasRating });
+    next();
 });
 
 const Venue = mongoose.model('Venue', venueSchema);

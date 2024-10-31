@@ -87,15 +87,15 @@ function Gallery() {
         {paginatedVenues.map(venue => (
           <Link 
             key={venue._id} 
-            to={`/venue/${venue._id}`} 
+            to={`/venue/${venue.VenueID}`} 
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
             <VenueCard 
               venue={{
                 ...venue,
-                name: venue.venueName,           // Map to match your schema
-                country: venue.countryName,      // Map to match your schema
-                isReviewed: Boolean(venue.review) // Or however you determine if a venue is reviewed
+                name: venue.venueName,
+                country: venue.countryName,
+                isReviewed: venue.reviewed
               }} 
             />
           </Link>

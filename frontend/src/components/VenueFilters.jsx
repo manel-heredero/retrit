@@ -10,11 +10,30 @@ function VenueFilters({ onFilter }) {
 
   const uniqueRegions = useMemo(() => {
     const regions = new Set(countriesData.map(country => country.region))
-    return Array.from(regions).filter(Boolean).sort()
+    return Array.from(regions)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b))
   }, [])
 
-  const handleFilter = () => {
-    onFilter({ region, capacity, locationType })
+  const handleFilterChange = (field, value) => {
+    let newFilters;
+    switch(field) {
+      case 'region':
+        setRegion(value)
+        newFilters = { region: value, capacity, locationType }
+        break
+      case 'capacity':
+        setCapacity(value)
+        newFilters = { region, capacity: value, locationType }
+        break
+      case 'locationType':
+        setLocationType(value)
+        newFilters = { region, capacity, locationType: value }
+        break
+      default:
+        return
+    }
+    onFilter(newFilters)
   }
 
   const handleClearFilter = () => {
@@ -26,29 +45,46 @@ function VenueFilters({ onFilter }) {
 
   return (
     <Box mb={6}>
-      <Flex mb={4} gap={4}>
-        <Select placeholder="Region" value={region} onChange={(e) => setRegion(e.target.value)}>
+      <Flex mb={4} gap={4} flexDir={['column', 'row']}>
+        <Select 
+          placeholder="Select Region" 
+          value={region} 
+          onChange={(e) => handleFilterChange('region', e.target.value)}
+        >
           {uniqueRegions.map(region => (
             <option key={region} value={region}>{region}</option>
           ))}
         </Select>
-        <Select placeholder="Capacity" value={capacity} onChange={(e) => setCapacity(e.target.value)}>
+
+        <Select 
+          placeholder="Select Capacity" 
+          value={capacity} 
+          onChange={(e) => handleFilterChange('capacity', e.target.value)}
+        >
           {venueOptions.capacityOptions.map(option => (
             <option key={option} value={option}>{option}</option>
           ))}
         </Select>
-        <Select placeholder="Location type" value={locationType} onChange={(e) => setLocationType(e.target.value)}>
+
+        <Select 
+          placeholder="Select Location Type" 
+          value={locationType} 
+          onChange={(e) => handleFilterChange('locationType', e.target.value)}
+        >
           {venueOptions.locationTypes.map(option => (
             <option key={option} value={option}>{option}</option>
           ))}
         </Select>
       </Flex>
+
       <Flex justify="flex-end" gap={4}>
-        <Button bg="brand.orange" onClick={handleFilter} width="120px">
-          Filter
-        </Button>
-        <Button bg="brand.verdigris" onClick={handleClearFilter} width="120px">
-          Clear Filter
+        <Button 
+          onClick={handleClearFilter} 
+          width="120px"
+          colorScheme="gray"
+          variant="outline"
+        >
+          Clear Filters
         </Button>
       </Flex>
     </Box>
