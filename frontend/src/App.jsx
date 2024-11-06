@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import SubmitVenue from './pages/SubmitVenue'
+import Venue from './pages/Venue'
 
 /**
  * Main App component that serves as the root of the application.
@@ -35,6 +36,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/submit-venue" element={<SubmitVenue />} />
+            <Route path="/venue/:id" element={<Venue />} />
           </Routes>
         </Box>
       </Container>

@@ -63,6 +63,34 @@ export const getVenueById = async (req, res) => {
     }
 };
 
+// Get single venue by VenueID
+export const getVenueByVenueId = async (req, res) => {
+    try {
+        console.log('Looking up venue with VenueID:', req.params.id);
+        
+        const venue = await Venue.findOne({ VenueID: req.params.id });
+        console.log('Found venue:', venue ? 'yes' : 'no');
+
+        if (!venue) {
+            return res.status(404).json({
+                success: false,
+                message: 'Venue not found'
+            });
+        }
+
+        res.json({
+            success: true,
+            data: venue
+        });
+    } catch (error) {
+        console.error('Error in getVenueByVenueId:', error);
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
+
 // Update venue
 export const updateVenue = async (req, res) => {
     try {

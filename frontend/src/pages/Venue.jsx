@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios'; // Assuming you're using axios for HTTP requests
-import { Box, Spinner } from '@chakra-ui/react';
-import VenuePage from './VenuePage'; // Adjust the import path as necessary
+import axios from 'axios';
+import { Box, Spinner, Text, VStack } from '@chakra-ui/react';
+import VenuePage from '../components/VenuePage';
 
 function Venue() {
   const { id } = useParams();
@@ -13,11 +13,26 @@ function Venue() {
   useEffect(() => {
     const fetchVenue = async () => {
       try {
-        const response = await axios.get(`/api/venues/${id}`);
-        setVenue(response.data.data);
-        setLoading(false);
+        console.log('Attempting to fetch venue with ID:', id);
+        
+        // Make sure we have a valid ID
+        if (!id) {
+          throw new Error('No venue ID provided');
+        }
+
+        // Use VenueID instead of MongoDB _id
+        const response = await axios.get(`/api/venues/byVenueId/${id}`);
+        console.log('API Response:', response.data);
+        
+        if (response.data.success && response.data.data) {
+          setVenue(response.data.data);
+        } else {
+          throw new Error('Venue not found');
+        }
       } catch (err) {
-        setError('Failed to fetch venue data');
+        console.error('Error fetching venue:', err);
+        setError(err.message || 'Failed to fetch venue data');
+      } finally {
         setLoading(false);
       }
     };
@@ -25,9 +40,32 @@ function Venue() {
     fetchVenue();
   }, [id]);
 
-  if (loading) return <Box textAlign="center" mt={10}><Spinner size="xl" /></Box>;
-  if (error) return <Box textAlign="center" mt={10} color="red.500">{error}</Box>;
-  if (!venue) return <Box textAlign="center" mt={10}>Venue not found</Box>;
+  if (loading) {
+    return (
+      <VStack spacing={4} mt={10}>
+        <Spinner size="xl" />
+        <Text>Loading venue {id}...</Text>
+      </VStack>
+    );
+  }
+
+  if (error) {
+    return (
+      <VStack spacing={4} mt={10}>
+        <Text color="red.500" fontWeight="bold">Error</Text>
+        <Text>{error}</Text>
+      </VStack>
+    );
+  }
+
+  if (!venue) {
+    return (
+      <VStack spacing={4} mt={10}>
+        <Text fontWeight="bold">Not Found</Text>
+        <Text>Venue {id} not found</Text>
+      </VStack>
+    );
+  }
 
   return <VenuePage venue={venue} />;
 }
