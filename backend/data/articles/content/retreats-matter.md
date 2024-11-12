@@ -1,12 +1,12 @@
 ---
 title: Retreats Matter
 author: Manel Heredero
-date: 2024-11-11
-readTime: 5 min read
-image: /images/testing-01.jpg
+date: 2024-11-12
+readTime: 6 min read
+image: /data/articles/images/croatia-dining-table-1600.jpg
 tags:
   - Retreats
-  - Strategy
+  - Purpose
 ---
 
 ### Retreats Matter

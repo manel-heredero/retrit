@@ -5,10 +5,20 @@ import { connectDB } from './config/db.js';
 import venueRoutes from './routes/venue.routes.js';
 import articleRoutes from './routes/article.routes.js';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
 const app = express();
+
+// Serve static files from the "data" directory
+app.use('/data', express.static(path.join(__dirname, 'data')));
+app.use('/uploads', express.static(path.join(__dirname, 'data/uploads')));
 
 // Middleware
 app.use(express.json());

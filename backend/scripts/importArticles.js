@@ -18,63 +18,42 @@ const __dirname = path.dirname(__filename);
 import Article from '../models/article.model.js';
 
 async function processMarkdownFile(filePath) {
-  try {
-    // Read the markdown file
-    const fileContent = await fs.readFile(filePath, 'utf-8');
-    
-    // Parse frontmatter and content
-    const { data: frontmatter, content } = matter(fileContent);
-    
-    // Validate required fields
-    if (!frontmatter.title) {
-      throw new Error('Missing required field: title');
+    try {
+      // Read the markdown file
+      const fileContent = await fs.readFile(filePath, 'utf-8');
+      
+      // Parse frontmatter and content
+      const { data: frontmatter, content } = matter(fileContent);
+      
+      // Validate required fields
+      if (!frontmatter.title) {
+        throw new Error('Missing required field: title');
+      }
+      if (!frontmatter.author) {
+        throw new Error('Missing required field: author');
+      }
+      if (!frontmatter.date) {
+        throw new Error('Missing required field: date');
+      }
+      
+      // Store raw markdown content instead of converting to HTML
+      return {
+        title: frontmatter.title,
+        author: frontmatter.author,
+        date: new Date(frontmatter.date),
+        content: content, // Store raw markdown content
+        image: frontmatter.image || '/images/default.jpg',
+        tags: frontmatter.tags || [],
+        readTime: frontmatter.readTime || '5 min read',
+        slug: slugify(frontmatter.title, {
+          lower: true,
+          strict: true
+        })
+      };
+    } catch (error) {
+      // ... (keep existing error handling) ...
     }
-    if (!frontmatter.author) {
-      throw new Error('Missing required field: author');
-    }
-    if (!frontmatter.date) {
-      throw new Error('Missing required field: date');
-    }
-    
-    // Convert markdown to HTML
-    const htmlContent = marked(content);
-    
-    // Generate slug from title
-    const slug = slugify(frontmatter.title, {
-      lower: true,
-      strict: true
-    });
-    
-    return {
-      title: frontmatter.title,
-      author: frontmatter.author,
-      date: new Date(frontmatter.date),
-      content: htmlContent,
-      image: frontmatter.image || '/images/default.jpg',
-      tags: frontmatter.tags || [],
-      readTime: frontmatter.readTime || '5 min read',
-      slug
-    };
-  } catch (error) {
-    console.error(`Error processing ${path.basename(filePath)}:`);
-    console.error('Make sure the file has the correct frontmatter structure:');
-    console.error(`
----
-title: Your Title Here
-author: Author Name
-date: YYYY-MM-DD
-readTime: X min read
-image: /images/your-image.jpg
-tags:
-  - tag1
-  - tag2
----
-
-# Content starts here...
-    `);
-    return null;
   }
-}
 
 async function importArticles() {
   try {

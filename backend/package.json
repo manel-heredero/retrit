@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "import-articles": "node scripts/importArticles.js",
-    "new-article": "cp ./data/templates/article-template.md ./data/articles/content/new-article.md",
+    "new-article": "node scripts/newArticle.js",
     "list-articles": "node scripts/listArticles.js",
     "edit-article": "node scripts/editArticle.js"
   },
@@ -22,6 +22,8 @@
     "marked": "^15.0.0",
     "mongodb": "^6.10.0",
     "mongoose": "^8.8.1",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.3.2",
     "slugify": "^1.6.6"
   },
   "description": "",

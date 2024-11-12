@@ -1,15 +1,17 @@
 import express from 'express';
-import { getArticles, getArticleBySlug } from '../controllers/article.controller.js';
+import {
+    createArticle,
+    getArticles,
+    getArticleBySlug
+} from '../controllers/article.controller.js';
 
 const router = express.Router();
 
-// Get all articles (with pagination)
-router.get('/', getArticles);
-
-// Create new article
+// Article routes
 router.post('/', createArticle);
-
-// Get single article by slug
+router.get('/', getArticles);
 router.get('/:slug', getArticleBySlug);
+// router.put('/:id', updateArticle);
+// router.delete('/:id', deleteArticle);
 
 export default router;

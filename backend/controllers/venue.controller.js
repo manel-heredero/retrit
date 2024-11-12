@@ -3,17 +3,43 @@ import Venue from '../models/venue.model.js';
 // Create new venue
 export const createVenue = async (req, res) => {
     try {
-        const venue = new Venue(req.body);
-        await venue.save();
+        console.log('=== Starting venue creation ===');
+        console.log('Raw request body:', req.body);
+
+        // Generate a new VenueID - Let's add more logging here
+        const lastVenue = await Venue.findOne().sort({ VenueID: -1 });
+        console.log('Last venue found:', lastVenue);
         
+        const newVenueID = lastVenue ? lastVenue.VenueID + 1 : 1;
+        console.log('Generated new VenueID:', newVenueID);
+
+        // Create the venue data object with explicit VenueID
+        const venueData = {
+            VenueID: newVenueID,  // Explicitly set the VenueID
+            venueName: req.body.venueName,
+            countryCode: req.body.countryCode.toUpperCase(),
+            locationType: req.body.locationType,
+            proximityToNature: req.body.proximityToNature,
+            capacity: req.body.capacity
+        };
+
+        console.log('Final venue data to save:', venueData);
+
+        // Create and save the venue
+        const venue = new Venue(venueData);
+        const savedVenue = await venue.save();
+        console.log('Venue saved successfully:', savedVenue);
+
         res.status(201).json({
             success: true,
-            data: venue
+            data: savedVenue
         });
     } catch (error) {
+        console.error('Error creating venue:', error);
         res.status(400).json({
             success: false,
-            message: error.message
+            message: error.message,
+            details: error.errors ? Object.values(error.errors).map(err => err.message) : null
         });
     }
 };
