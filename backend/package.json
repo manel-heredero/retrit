@@ -4,17 +4,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "import-articles": "node scripts/importArticles.js",
+    "new-article": "cp ./data/templates/article-template.md ./data/articles/content/new-article.md",
+    "list-articles": "node scripts/listArticles.js",
+    "edit-article": "node scripts/editArticle.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.0",
     "mongodb": "^6.10.0",
-    "mongoose": "^8.7.3"
+    "mongoose": "^8.8.1",
+    "slugify": "^1.6.6"
+  },
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }

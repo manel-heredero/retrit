@@ -8,7 +8,7 @@ function Navbar() {
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <Box>
           <Link as={RouterLink} to="/" fontWeight="bold" color="brand.orange">
-            Logo
+          <img src="/retrit.svg" alt="Logo" style={{ height: '40px' }} />
           </Link>
         </Box>
         <Spacer />

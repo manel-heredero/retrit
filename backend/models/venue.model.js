@@ -67,6 +67,12 @@ const venueSchema = new mongoose.Schema({
         },
         default: null
     },
+
+    description: {
+        type: String,
+        default: null,
+        trim: true
+    },
     
     // Geographic fields (auto-populated)
     countryName: { type: String, default: null },

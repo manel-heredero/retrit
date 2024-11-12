@@ -1,5 +1,7 @@
 import { extendTheme } from '@chakra-ui/react'
 
+// https://coolors.co/palette/606c38-283618-fefae0-dda15e-bc6c25
+
 const theme = extendTheme({
   fonts: {
     heading: `'Rethink Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
@@ -12,11 +14,11 @@ const theme = extendTheme({
   },
   colors: {
     brand: {
-      orange: '#EA9010',
-      verdigris: '#38A3A5',
+      orange: '#FCA311',
+      platinum: '#E5E5E5',
       seasalt: '#F9F9F9',
       violet: '#51344D',
-      blue: '#080357',
+      blue: '#14213D',
       black: '#000000',
     },
   },

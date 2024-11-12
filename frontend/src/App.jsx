@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Blog from './pages/Blog'
+import Article from './pages/Article'
 import SubmitVenue from './pages/SubmitVenue'
 import Venue from './pages/Venue'
 
@@ -35,6 +36,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<Article />} />
             <Route path="/submit-venue" element={<SubmitVenue />} />
             <Route path="/venue/:id" element={<Venue />} />
           </Routes>

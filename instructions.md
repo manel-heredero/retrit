@@ -27,6 +27,46 @@ In short, this is a project with MERN and Vite as framework.
    - Review information (optional) for "Food", "Sleeping Comfort", "Common Spaces", "Facilitation Readiness" and overall rating
    - Other review information: Veggie/Vegan Friendly?, Can you cook yourself?, Level of Self-Hosting, venue website, google maps link, Image.
 
+## BLOG FUNCTIONALITIES
+
+1. The blog section contains some articles about retreats and offsites.
+2. The articles are shown in the blog page with a pagination of up to 6 articles per page.
+3. When clicking on the article, the user is taken to the article url, which contains all information about the article.
+
+# CREATING AND EDITING ARTICLES
+
+Article File Structure:
+backend/
+├── data/
+│ └── articles/
+│ ├── images/ # Store article images here
+│ └── content/ # Store .md files here
+├── scripts/
+│ ├── importArticles.js # Script to import articles to MongoDB
+│ ├── listArticles.js # Script to list all articles
+│ ├── editArticle.js # Script to edit existing articles
+│ └── createArticleTemplate.js # Script to create new articles
+└── package.json
+
+## Required Fields for Articles
+
+- title: String (required)
+- author: String (required)
+- date: Date (required, format: YYYY-MM-DD)
+- readTime: String (required, format: "X min read")
+- image: String (required, path to image)
+- tags: Array of Strings (optional)
+- content: Markdown content (required)
+- slug: String (auto-generated from title)
+
+## Scripts to create and edit articles
+
+1. To create a new article, run the command "npm run new-article title-in-slug-format" and follow the instructions.
+2. The article will be created in the backend/data/articles/content folder.
+3. The article will be added to the database by running "npm run import-articles".
+4. To list all articles, run the command "npm run list-articles".
+5. To edit an article, run the command "npm run edit-article <slug>".
+
 ## FIELDS FOR EACH VENUE
 
 Required Fields:
@@ -63,7 +103,7 @@ Optional Fields:
 
 - Use Chakra UI for styling.
 - Use the colors defined in the theme.js file.
-- Colors are per https://coolors.co/ea9010-080357-f9f9f9-51344d-38a3a5
+- Colors are per https://coolors.co/palette/606c38-283618-fefae0-dda15e-bc6c25
 - Use the fonts defined in the theme.js file.
 
 # CODING EXAMPLES FOR SPECIFIC FUNCTIONALITIES
