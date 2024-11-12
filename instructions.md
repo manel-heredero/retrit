@@ -33,6 +33,10 @@ In short, this is a project with MERN and Vite as framework.
 2. The articles are shown in the blog page with a pagination of up to 6 articles per page.
 3. When clicking on the article, the user is taken to the article url, which contains all information about the article.
 
+## IMAGE HOST
+
+https://postimg.cc/bDG3XZDg/3829a63f
+
 # CREATING AND EDITING ARTICLES
 
 Article File Structure:
@@ -61,7 +65,9 @@ backend/
 
 ## Scripts to create and edit articles
 
-1. To create a new article, run the command "npm run new-article title-in-slug-format" and follow the instructions.
+Run the following scripts always from the backend folder:
+
+1. To create a new article, run the command <npm run new-article npm run new-article "Your Article Title"> and follow the instructions.
 2. The article will be created in the backend/data/articles/content folder.
 3. The article will be added to the database by running "npm run import-articles".
 4. To list all articles, run the command "npm run list-articles".

@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <Box px={4} bg="brand.seasalt">
+    <Box px={4} bg="brand.seasalt" pt={4} pb={4}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <Box>
           <Link as={RouterLink} to="/" fontWeight="bold" color="brand.orange">

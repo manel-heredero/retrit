@@ -6,6 +6,8 @@ import VenueFilters from './VenueFilters'
 import { Link } from 'react-router-dom'
 import { filterAndSortVenues, paginateVenues, calculateTotalPages } from '../utils/galleryHelpers'
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 function Gallery() {
   const [venues, setVenues] = useState([])
   const [loading, setLoading] = useState(true)
@@ -24,7 +26,7 @@ function Gallery() {
     const fetchVenues = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/api/venues');
+        const response = await axios.get(`${API_URL}/api/venues`);
         console.log('Raw API Response:', response.data);
         
         if (response.data.success && Array.isArray(response.data.data)) {

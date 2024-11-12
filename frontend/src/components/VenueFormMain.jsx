@@ -1,6 +1,6 @@
 // src/components/VenueFormMain.jsx
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
   SimpleGrid,
   FormControl,
@@ -15,9 +15,8 @@ import {
 import countriesData from '../data/countries.json';
 import venueOptions from '../data/venueOptions.json';
 
-function VenueFormMain({ venueData, onInputChange, onNext }) {
+function VenueFormMain({ venueData, onInputChange, onNext, errors }) {
   const { capacityOptions, locationTypes, relationToVenue } = venueOptions;
-  const [errors, setErrors] = useState({});
 
   const validateForm = () => {
     const newErrors = {};
@@ -26,12 +25,13 @@ function VenueFormMain({ venueData, onInputChange, onNext }) {
     if (!venueData.capacity) newErrors.capacity = "Capacity is required";
     if (!venueData.venueType) newErrors.venueType = "Venue type is required";
     if (!venueData.relationToVenue) newErrors.relationToVenue = "Relation to venue is required";
-    setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleNext = () => {
+    console.log('Next button clicked');
     if (validateForm()) {
+      console.log('Validation passed, calling onNext');
       onNext();
     }
   };

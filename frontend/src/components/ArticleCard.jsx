@@ -41,16 +41,13 @@ function ArticleCard({ article }) {
         objectFit="cover"
         fallback={<Box height="200px" bg="gray.200" />}
       />
-      <Box p={6}>
+      <Box p={4}>
         <VStack align="start" spacing={3}>
           <Heading size="md" color="brand.blue">
             {article.title}
           </Heading>
           
           <HStack spacing={4}>
-            <Text color="gray.600" fontSize="sm">
-              {formattedDate}
-            </Text>
             <Text color="gray.600" fontSize="sm">
               {article.readTime}
             </Text>

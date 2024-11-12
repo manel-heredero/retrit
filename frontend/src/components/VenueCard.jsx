@@ -7,10 +7,16 @@ function VenueCard({ venue }) {
     // Main container for the card
     <Box borderWidth="1px" borderRadius="lg" overflow="hidden">
       {/* Venue image */}
-      <Image src={venue.image} alt={venue.name} />
+      <Image
+        src={venue.image}
+        alt={venue.name}
+        width="100%"
+        height="200px"
+        objectFit="cover"
+      />
 
       {/* Content container */}
-      <Box p="4">
+      <Box p="4" bg="#FEFAE0">
         {/* Top row: Review status and country */}
         <Box display="flex" alignItems="baseline">
           {/* Badge indicating whether the venue is reviewed or not */}
