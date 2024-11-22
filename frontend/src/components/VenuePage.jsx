@@ -16,6 +16,7 @@ import {
   Container,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon, StarIcon, CheckIcon } from '@chakra-ui/icons'; 
+import Footer from './Footer'; // Importing the updated Footer component
 
 function VenuePage({ venue }) {
   // Helper function to handle empty values
@@ -140,6 +141,12 @@ function VenuePage({ venue }) {
             </Button>
           )}
         </Stack>
+
+        {/*Description section*/}
+        <VStack spacing={4} align="stretch">
+          <Text>{venue.description}</Text>
+        </VStack>
+
         {/* Ratings section */}
         <VStack spacing={4} align="stretch">
           <HStack spacing={2}>
@@ -172,6 +179,7 @@ function VenuePage({ venue }) {
           </HStack>
         </VStack>
       </VStack>
+      <Footer />
     </Container>
   );
 }

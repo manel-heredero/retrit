@@ -2,71 +2,79 @@
 
 import React from 'react';
 import {
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
-  VStack,
   Box,
   Text,
-  Flex,
+  Input,
+  Button,
+  useToast,
 } from '@chakra-ui/react';
+import ImageUpload from './ImageUpload';
+import { uploadImage } from '../services/imageService';
 
-function VenueFormOther({ venueData, onInputChange, onSubmit, onBack }) {
-  const handleBack = () => {
-    onBack(2); // Go back to step 2
+const VenueFormOther = ({ 
+  venueData,
+  onInputChange,
+  onSubmit,
+  onBack,
+  isSubmitting,
+  errors 
+}) => {
+  const toast = useToast();
+
+  const handleImageSelect = async (base64String) => {
+    try {
+      // Upload to ImgBB through our backend
+      const imageUrl = await uploadImage(base64String);
+      
+      // Save the URL in venue data
+      onInputChange('image', imageUrl);
+      
+      toast({
+        title: 'Image uploaded successfully',
+        status: 'success',
+        duration: 3000,
+      });
+    } catch (error) {
+      toast({
+        title: 'Upload failed',
+        description: error.message,
+        status: 'error',
+        duration: 5000,
+      });
+    }
   };
 
   return (
-    <VStack spacing={6} align="stretch">
-      <Box bg="gray.100" p={4} borderRadius="md">
-        <Text>{venueData.venueName}</Text>
-      </Box>
+    <Box p={4}>
+      <Text mb={4}>Upload Image</Text>
+      <ImageUpload 
+        onImageSelect={handleImageSelect}
+      />
 
-      <FormControl>
-        <FormLabel htmlFor="image">Upload Image</FormLabel>
-        <Input
-          type="file"
-          id="image"
-          accept="image/*"
-          onChange={onInputChange}
-        />
-      </FormControl>
+      <Text mt={6} mb={4}>Google Maps Link</Text>
+      <Input
+        placeholder="Enter Google Maps link"
+        value={venueData?.googleMapsLink || ''}
+        onChange={(e) => onInputChange('googleMapsLink', e.target.value)}
+      />
 
-      <FormControl>
-        <FormLabel htmlFor="googleMapsLink">Google Maps Link</FormLabel>
-        <Input 
-          id="googleMapsLink" 
-          placeholder="Enter Google Maps link" 
-          value={venueData.googleMapsLink}
-          onChange={onInputChange}
-        />
-      </FormControl>
-
-      <Flex justifyContent="space-between" mt={4}>
+      <Box mt={6} display="flex" justifyContent="space-between">
         <Button 
-          onClick={handleBack}
-          colorScheme="brand"
-          bg="brand.blue"
-          color="brand.seasalt"
-          _hover={{ bg: 'brand.verdigris' }}
-          width="auto"
+          onClick={onBack}
+          variant="outline"
         >
           Back
         </Button>
         <Button 
           onClick={onSubmit}
-          colorScheme="brand"
-          bg="brand.orange"
-          color="brand.seasalt"
-          _hover={{ bg: 'brand.verdigris' }}
-          width="auto"
+          colorScheme="orange"
+          isLoading={isSubmitting}
         >
           Submit
         </Button>
-      </Flex>
-    </VStack>
+      </Box>
+    </Box>
   );
-}
+};
 
 export default VenueFormOther;
