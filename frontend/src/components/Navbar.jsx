@@ -19,17 +19,6 @@ function Navbar() {
           <Link as={RouterLink} to="/blog" mr={4} color="brand.blue" _hover={{ color: 'brand.orange' }}>
             Blog
           </Link>
-          <Button
-            as={RouterLink}
-            to="/submit-venue"
-            variant="outline"
-            borderColor="brand.orange"
-            color="brand.black"
-            size="md"
-            _hover={{ bg: 'brand.orange', color: 'brand.seasalt', variant: 'solid', borderColor: 'brand.seasalt' }}
-          >
-            Submit Venue
-          </Button>
         </Flex>
       </Flex>
     </Box>
