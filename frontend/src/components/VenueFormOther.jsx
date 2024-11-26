@@ -1,6 +1,6 @@
 // src/components/VenueFormOther.jsx
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Text,
@@ -21,13 +21,26 @@ const VenueFormOther = ({
 }) => {
   const toast = useToast();
 
+  const [isImageUploading, setIsImageUploading] = useState(false);
+
   const handleImageSelect = async (base64String) => {
+    setIsImageUploading(true);
     try {
-      // Upload to ImgBB through our backend
-      const imageUrl = await uploadImage(base64String);
+      console.log('Starting image upload...');
       
-      // Save the URL in venue data
-      onInputChange('image', imageUrl);
+      const imageUrl = await uploadImage(base64String);
+      console.log('Received image URL:', imageUrl);
+      
+      const syntheticEvent = {
+        target: {
+          id: 'image',
+          value: imageUrl,
+          type: 'text'
+        }
+      };
+      
+      onInputChange(syntheticEvent);
+      console.log('Form state updated with image URL');
       
       toast({
         title: 'Image uploaded successfully',
@@ -35,14 +48,19 @@ const VenueFormOther = ({
         duration: 3000,
       });
     } catch (error) {
+      console.error('Image upload error:', error);
       toast({
         title: 'Upload failed',
         description: error.message,
         status: 'error',
         duration: 5000,
       });
+    } finally {
+      setIsImageUploading(false);
     }
   };
+
+  console.log('Current venue data:', venueData);
 
   return (
     <Box p={4}>
@@ -53,9 +71,10 @@ const VenueFormOther = ({
 
       <Text mt={6} mb={4}>Google Maps Link</Text>
       <Input
+        id="googleMapsLink"
         placeholder="Enter Google Maps link"
         value={venueData?.googleMapsLink || ''}
-        onChange={(e) => onInputChange('googleMapsLink', e.target.value)}
+        onChange={onInputChange}
       />
 
       <Box mt={6} display="flex" justifyContent="space-between">
@@ -68,7 +87,8 @@ const VenueFormOther = ({
         <Button 
           onClick={onSubmit}
           colorScheme="orange"
-          isLoading={isSubmitting}
+          isLoading={isSubmitting || isImageUploading}
+          disabled={isImageUploading}
         >
           Submit
         </Button>

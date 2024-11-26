@@ -12,10 +12,13 @@ export const useForm = (initialData = INITIAL_VENUE_DATA) => {
 
     const handleInputChange = (e) => {
         const { id, value, type, checked } = e.target;
-        setData(prev => ({
-            ...prev,
-            [id]: type === 'checkbox' ? checked : value
-        }));
+        setData(prev => {
+            const { imageUrl, ...rest } = prev;
+            return {
+                ...rest,
+                [id]: type === 'checkbox' ? checked : value
+            };
+        });
     };
 
     const handleNext = () => {
@@ -35,6 +38,8 @@ export const useForm = (initialData = INITIAL_VENUE_DATA) => {
     const handleSubmit = async () => {
         try {
             setIsSubmitting(true);
+            console.log('Submitting venue data:', data);
+            
             const stepErrors = validateStep(step, data);
             
             if (Object.keys(stepErrors).length > 0) {
@@ -43,9 +48,11 @@ export const useForm = (initialData = INITIAL_VENUE_DATA) => {
             }
 
             const result = await submitVenueData(data);
+            console.log('Submission result:', result);
             setIsSubmitted(true);
             return result;
         } catch (error) {
+            console.error('Submit error:', error);
             setErrors({ submit: error.message });
             throw error;
         } finally {

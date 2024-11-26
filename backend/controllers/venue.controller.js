@@ -4,31 +4,33 @@ import Venue from '../models/venue.model.js';
 export const createVenue = async (req, res) => {
     try {
         console.log('=== Starting venue creation ===');
-        console.log('Raw request body:', req.body);
+        console.log('Raw request body:', JSON.stringify(req.body, null, 2));
 
-        // Generate a new VenueID - Let's add more logging here
+        // Generate a new VenueID
         const lastVenue = await Venue.findOne().sort({ VenueID: -1 });
-        console.log('Last venue found:', lastVenue);
-        
         const newVenueID = lastVenue ? lastVenue.VenueID + 1 : 1;
-        console.log('Generated new VenueID:', newVenueID);
-
-        // Create the venue data object with explicit VenueID
+        
+        // Create the venue data object
         const venueData = {
-            VenueID: newVenueID,  // Explicitly set the VenueID
-            venueName: req.body.venueName,
+            ...req.body,
+            VenueID: newVenueID,
             countryCode: req.body.countryCode.toUpperCase(),
-            locationType: req.body.locationType,
-            proximityToNature: req.body.proximityToNature,
-            capacity: req.body.capacity
+            image: req.body.image || null  // Explicitly set image
         };
 
-        console.log('Final venue data to save:', venueData);
+        console.log('Image field in venue data:', venueData.image);
+        console.log('Final venue data to save:', JSON.stringify(venueData, null, 2));
 
         // Create and save the venue
         const venue = new Venue(venueData);
+        
+        // Log the venue object before saving
+        console.log('Venue object before save:', venue);
+        
         const savedVenue = await venue.save();
-        console.log('Venue saved successfully:', savedVenue);
+        
+        // Log the saved venue
+        console.log('Saved venue:', JSON.stringify(savedVenue.toObject(), null, 2));
 
         res.status(201).json({
             success: true,
@@ -36,6 +38,7 @@ export const createVenue = async (req, res) => {
         });
     } catch (error) {
         console.error('Error creating venue:', error);
+        console.error('Error details:', error.errors);  // Add this line
         res.status(400).json({
             success: false,
             message: error.message,

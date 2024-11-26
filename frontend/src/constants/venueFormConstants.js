@@ -16,7 +16,7 @@ export const INITIAL_VENUE_DATA = {
     levelOfSelfHosting: '',
     veggieVeganFriendly: false,
     canCookYourself: false,
-    imageUrl: '',
+    image: null,
     googleMapsLink: '',
 };
 

@@ -91,7 +91,17 @@ const venueSchema = new mongoose.Schema({
     // Other optional fields
     veggieFriendly: { type: Boolean, default: null },
     canCookSelf: { type: Boolean, default: null },
-    image: { type: mongoose.Schema.Types.Mixed, default: null },
+    image: {
+        type: String,
+        validate: {
+            validator: function(v) {
+                if (!v) return true;
+                return /^https?:\/\/.+/.test(v);
+            },
+            message: 'Image must be a valid URL starting with http:// or https://'
+        },
+        default: null
+    },
 
     googleMapsLink: {
         type: String,
@@ -111,6 +121,9 @@ const venueSchema = new mongoose.Schema({
 
 // Middleware to auto-populate the reviewed field
 venueSchema.pre('save', function(next) {
+    // Log image field
+    console.log('Pre-save image field:', this.image);
+    
     // A venue is considered reviewed if it has any rating
     this.reviewed = Boolean(
         this.overallRating ||

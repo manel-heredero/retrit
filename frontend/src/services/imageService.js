@@ -1,8 +1,8 @@
-import { API_BASE_URL } from '../constants/apiConstants';
+import { API_URL } from '../constants/apiConstants';
 
 export const uploadImage = async (base64Image) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/images/upload`, {
+    const response = await fetch(`${API_URL}/images/upload`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

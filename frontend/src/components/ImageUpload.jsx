@@ -8,7 +8,7 @@ import {
   useToast,
   Center,
 } from '@chakra-ui/react';
-import { processImageFile } from '../utils/imageUtils';
+import { validateImageFile, createImagePreview, convertToBase64 } from '../utils/imageUtils';
 
 const ImageUpload = ({ onImageSelect }) => {
   const [preview, setPreview] = useState(null);
@@ -21,8 +21,15 @@ const ImageUpload = ({ onImageSelect }) => {
 
     setIsLoading(true);
     try {
-      const { preview: previewUrl, base64 } = await processImageFile(file);
+      // Validate file
+      validateImageFile(file);
+      
+      // Create preview
+      const previewUrl = createImagePreview(file);
       setPreview(previewUrl);
+      
+      // Convert to base64
+      const base64 = await convertToBase64(file);
       onImageSelect(base64);
     } catch (error) {
       toast({

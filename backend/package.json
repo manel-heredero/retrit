@@ -9,7 +9,8 @@
     "import-articles": "node scripts/importArticles.js",
     "new-article": "node scripts/newArticle.js",
     "list-articles": "node scripts/listArticles.js",
-    "edit-article": "node scripts/editArticle.js"
+    "edit-article": "node scripts/editArticle.js",
+    "test:venue": "node scripts/testVenueCreation.js"
   },
   "keywords": [],
   "author": "",
