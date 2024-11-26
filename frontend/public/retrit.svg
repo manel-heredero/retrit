@@ -44,8 +44,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="278.31043"
-     inkscape:cy="388.63241"
+     inkscape:cx="113.08851"
+     inkscape:cy="254.69531"
      inkscape:document-units="mm"
      inkscape:current-layer="layer4"
      inkscape:document-rotation="0"
@@ -83,7 +83,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -104,16 +104,19 @@
      inkscape:label="chinese"
      style="display:none">
     <path
-       d="m 36.607068,22.184074 h 7.109153 c 1.309572,0.261908 1.09166,0.785738 -0.08677,1.571491 l 10e-7,9.282295 c 0.916682,12.571902 0.952258,17.772094 17.532365,25.683304 l -5.263776,4.910897 C 47.310828,58.758402 44.367725,56.6044 39.988172,48.902521 c -4.4141,8.005857 -8.261983,10.631346 -14.598303,14.72954 L 17.945918,59.310472 C 30.386843,54.465053 36.607306,45.494478 36.607306,32.398745 Z"
+       d="m 26.330382,22.994567 h 4.321579 q 1.964358,0.392862 0.196708,1.571491 v 8.053872 q 1.375024,18.857854 20.036458,26.911727 l -2.35722,4.910897 Q 34.973823,58.549476 29.277173,43.031037 25.152033,57.763734 10.615746,64.442554 L 7.6692319,60.120965 Q 26.33062,52.852837 26.33062,33.209238 Z"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.2572"
-       id="path929"
-       sodipodi:nodetypes="ccccccccccc" />
+       id="path929" />
+    <path
+       d="m 48.921691,23.300129 h 4.321579 q 1.964359,0.392862 0.196708,1.57149 v 8.053873 q 1.375025,18.857854 20.03646,26.911726 l -2.357221,4.910898 Q 57.565133,58.855039 51.868482,43.336599 47.743342,58.069296 33.207056,64.748116 L 30.260541,60.426527 Q 48.921929,53.158398 48.921929,33.514801 Z"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.2572"
+       id="path929-6" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="r"
-     style="display:inline">
+     style="display:none">
     <g
        aria-label="r"
        id="text896"

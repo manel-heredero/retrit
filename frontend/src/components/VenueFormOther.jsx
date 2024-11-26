@@ -2,15 +2,17 @@
 
 import React, { useState } from 'react';
 import {
-  Box,
-  Text,
+  FormControl,
+  FormLabel,
   Input,
   Button,
-  useToast,
+  VStack,
+  Box,
+  Text,
+  Flex,
 } from '@chakra-ui/react';
-import ImageUpload from './ImageUpload';
-import { uploadImage } from '../services/imageService';
 
+<<<<<<< HEAD
 const VenueFormOther = ({ 
   venueData,
   onInputChange,
@@ -58,17 +60,22 @@ const VenueFormOther = ({
     } finally {
       setIsImageUploading(false);
     }
+=======
+function VenueFormOther({ venueData, onInputChange, onSubmit, onBack }) {
+  const handleBack = () => {
+    onBack(2); // Go back to step 2
+>>>>>>> parent of da391c3 (Prepping image uplaod)
   };
 
   console.log('Current venue data:', venueData);
 
   return (
-    <Box p={4}>
-      <Text mb={4}>Upload Image</Text>
-      <ImageUpload 
-        onImageSelect={handleImageSelect}
-      />
+    <VStack spacing={6} align="stretch">
+      <Box bg="gray.100" p={4} borderRadius="md">
+        <Text>{venueData.venueName}</Text>
+      </Box>
 
+<<<<<<< HEAD
       <Text mt={6} mb={4}>Google Maps Link</Text>
       <Input
         id="googleMapsLink"
@@ -76,25 +83,58 @@ const VenueFormOther = ({
         value={venueData?.googleMapsLink || ''}
         onChange={onInputChange}
       />
+=======
+      <FormControl>
+        <FormLabel htmlFor="image">Upload Image</FormLabel>
+        <Input
+          type="file"
+          id="image"
+          accept="image/*"
+          onChange={onInputChange}
+        />
+      </FormControl>
+>>>>>>> parent of da391c3 (Prepping image uplaod)
 
-      <Box mt={6} display="flex" justifyContent="space-between">
+      <FormControl>
+        <FormLabel htmlFor="googleMapsLink">Google Maps Link</FormLabel>
+        <Input 
+          id="googleMapsLink" 
+          placeholder="Enter Google Maps link" 
+          value={venueData.googleMapsLink}
+          onChange={onInputChange}
+        />
+      </FormControl>
+
+      <Flex justifyContent="space-between" mt={4}>
         <Button 
-          onClick={onBack}
-          variant="outline"
+          onClick={handleBack}
+          colorScheme="brand"
+          bg="brand.blue"
+          color="brand.seasalt"
+          _hover={{ bg: 'brand.verdigris' }}
+          width="auto"
         >
           Back
         </Button>
         <Button 
           onClick={onSubmit}
+<<<<<<< HEAD
           colorScheme="orange"
           isLoading={isSubmitting || isImageUploading}
           disabled={isImageUploading}
+=======
+          colorScheme="brand"
+          bg="brand.orange"
+          color="brand.seasalt"
+          _hover={{ bg: 'brand.verdigris' }}
+          width="auto"
+>>>>>>> parent of da391c3 (Prepping image uplaod)
         >
           Submit
         </Button>
-      </Box>
-    </Box>
+      </Flex>
+    </VStack>
   );
-};
+}
 
 export default VenueFormOther;

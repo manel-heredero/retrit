@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { API_URL } from '../constants/apiConstants';
 
 export const uploadImage = async (base64Image) => {
@@ -22,3 +23,5 @@ export const uploadImage = async (base64Image) => {
     throw error;
   }
 };
+=======
+>>>>>>> parent of da391c3 (Prepping image uplaod)

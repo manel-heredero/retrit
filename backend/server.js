@@ -6,7 +6,6 @@ import venueRoutes from './routes/venue.routes.js';
 import articleRoutes from './routes/article.routes.js';
 import cors from 'cors';
 import path from 'path';
-import imageRoutes from './routes/image.routes.js';
 import { fileURLToPath } from 'url';
 
 // Get __dirname equivalent in ES modules
@@ -22,12 +21,11 @@ app.use('/data', express.static(path.join(__dirname, 'data')));
 app.use('/uploads', express.static(path.join(__dirname, 'data/uploads')));
 
 // Middleware
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'http://localhost:5173', // frontend URL
     credentials: true
-}));
+  }));
 
 // Test route
 app.get('/test', (req, res) => {
@@ -41,8 +39,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api/blog', articleRoutes);
-app.use('/api/images', imageRoutes);
+app.use('/api/blog', articleRoutes); // Move this before venueRoutes
 app.use('/api', venueRoutes);
 
 // 404 handler for undefined routes
