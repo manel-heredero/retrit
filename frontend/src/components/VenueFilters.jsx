@@ -4,9 +4,11 @@ import countriesData from '../data/countries.json'
 import venueOptions from '../data/venueOptions.json'
 
 function VenueFilters({ onFilter }) {
-  const [region, setRegion] = React.useState('')
-  const [capacity, setCapacity] = React.useState('')
-  const [locationType, setLocationType] = React.useState('')
+  const [localFilters, setLocalFilters] = React.useState({
+    region: '',
+    capacity: '',
+    locationType: ''
+  })
 
   const uniqueRegions = useMemo(() => {
     const regions = new Set(countriesData.map(country => country.region))
@@ -16,31 +18,22 @@ function VenueFilters({ onFilter }) {
   }, [])
 
   const handleFilterChange = (field, value) => {
-    let newFilters;
-    switch(field) {
-      case 'region':
-        setRegion(value)
-        newFilters = { region: value, capacity, locationType }
-        break
-      case 'capacity':
-        setCapacity(value)
-        newFilters = { region, capacity: value, locationType }
-        break
-      case 'locationType':
-        setLocationType(value)
-        newFilters = { region, capacity, locationType: value }
-        break
-      default:
-        return
+    const newFilters = {
+      ...localFilters,
+      [field]: value
     }
+    setLocalFilters(newFilters)
     onFilter(newFilters)
   }
 
   const handleClearFilter = () => {
-    setRegion('')
-    setCapacity('')
-    setLocationType('')
-    onFilter({ region: '', capacity: '', locationType: '' })
+    const clearedFilters = {
+      region: '',
+      capacity: '',
+      locationType: ''
+    }
+    setLocalFilters(clearedFilters)
+    onFilter(clearedFilters)
   }
 
   return (
@@ -48,7 +41,7 @@ function VenueFilters({ onFilter }) {
       <Flex mb={4} gap={4} flexDir={['column', 'row']}>
         <Select 
           placeholder="Select Region" 
-          value={region} 
+          value={localFilters.region}
           onChange={(e) => handleFilterChange('region', e.target.value)}
         >
           {uniqueRegions.map(region => (
@@ -58,7 +51,7 @@ function VenueFilters({ onFilter }) {
 
         <Select 
           placeholder="Select Capacity" 
-          value={capacity} 
+          value={localFilters.capacity}
           onChange={(e) => handleFilterChange('capacity', e.target.value)}
         >
           {venueOptions.capacityOptions.map(option => (
@@ -68,7 +61,7 @@ function VenueFilters({ onFilter }) {
 
         <Select 
           placeholder="Select Location Type" 
-          value={locationType} 
+          value={localFilters.locationType}
           onChange={(e) => handleFilterChange('locationType', e.target.value)}
         >
           {venueOptions.locationTypes.map(option => (
@@ -81,8 +74,11 @@ function VenueFilters({ onFilter }) {
         <Button 
           onClick={handleClearFilter} 
           width="120px"
-          colorScheme="gray"
-          variant="outline"
+          bg="brand.earth"
+          color="white"
+          _hover={{
+            bg: 'brand.orange',
+          }}
         >
           Clear Filters
         </Button>

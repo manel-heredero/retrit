@@ -83,7 +83,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -116,7 +116,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="r"
-     style="display:none">
+     style="display:inline">
     <g
        aria-label="r"
        id="text896"

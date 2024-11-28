@@ -14,11 +14,11 @@ const theme = extendTheme({
   },
   colors: {
     brand: {
-      orange: '#FCA311',
-      platinum: '#E5E5E5',
-      seasalt: '#F9F9F9',
-      violet: '#51344D',
-      blue: '#14213D',
+      green: '#606C38',
+      darkGreen: '#283618',
+      cornsilk: '#FEFAE0',
+      earth: '#DDA15E',
+      orange: '#BC6C25',
       black: '#000000',
     },
   },
