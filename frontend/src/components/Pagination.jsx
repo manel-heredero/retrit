@@ -1,25 +1,10 @@
 import React from 'react';
 import { HStack, Button, Text } from '@chakra-ui/react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 
 function Pagination({ currentPage, totalPages, onPageChange }) {
   return (
     <HStack justify="center" spacing={4} mt={8}>
-      <Button
-        onClick={() => onPageChange(1)}
-        isDisabled={currentPage === 1}
-        bg="brand.earth"
-        color="white"
-        _hover={{
-          bg: 'brand.orange',
-        }}
-        _disabled={{
-          bg: 'gray.200',
-          color: 'gray.500',
-          cursor: 'not-allowed',
-        }}
-      >
-        First
-      </Button>
       <Button
         onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
         isDisabled={currentPage === 1}
@@ -35,7 +20,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
           cursor: 'not-allowed',
         }}
       >
-        Previous
+        <ChevronLeftIcon boxSize={6} />
       </Button>
       <Text color="brand.black">
         Page {currentPage} of {totalPages}
@@ -55,23 +40,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
           cursor: 'not-allowed',
         }}
       >
-        Next
-      </Button>
-      <Button
-        onClick={() => onPageChange(totalPages)}
-        isDisabled={currentPage === totalPages}
-        bg="brand.earth"
-        color="white"
-        _hover={{
-          bg: 'brand.orange',
-        }}
-        _disabled={{
-          bg: 'gray.200',
-          color: 'gray.500',
-          cursor: 'not-allowed',
-        }}
-      >
-        Last
+        <ChevronRightIcon boxSize={6} />
       </Button>
     </HStack>
   );

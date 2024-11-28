@@ -8,7 +8,7 @@ import { filterAndSortVenues, paginateVenues, calculateTotalPages } from '../uti
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
-function Gallery({ filters }) {
+function GalleryGrid({ filters }) {
   const [venues, setVenues] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -97,4 +97,4 @@ function Gallery({ filters }) {
   );
 }
 
-export default Gallery
+export default GalleryGrid
