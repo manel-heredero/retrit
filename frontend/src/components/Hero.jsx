@@ -1,9 +1,8 @@
 import React from 'react'
-import { Box, Container, Heading, Text, Stack, Button, Flex } from '@chakra-ui/react'
-import { useNavigate } from 'react-router-dom'
+import { Box, Container, Heading, Text, Stack, VStack, Flex } from '@chakra-ui/react'
+import CustomButton from './CustomButton'
 
 function Hero() {
-  const navigate = useNavigate();
   const airtableFormUrl = import.meta.env.VITE_AIRTABLE_FORM_URL;
 
   const handleSubmitVenue = () => {
@@ -11,118 +10,75 @@ function Hero() {
   };
 
   return (
-    <Box 
-      height="100vh"
-      width="100vw"
-      position="relative"
-      overflow="hidden"
-    >
-      {/* Background Image */}
-      <Box
-        position="absolute"
-        top={0}
-        left={0}
-        right={0}
-        bottom={0}
-        bgImage="url('/munichretreat.jpg')"
-        bgSize="cover"
-        bgPosition="center"
-        bgRepeat="no-repeat"
-        _after={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          bg: 'rgba(242, 135, 5, 0.85)',  // brand.orange with opacity
-          zIndex: 1
-        }}
-      />
+    <Flex minH="100vh" align="center">
+      <Container maxW="container.xl">
+        <VStack spacing={16} align="stretch">
+          {/* Logo */}
+          <Box>
+            <img 
+              src="/retrit.svg" 
+              alt="retr.it" 
+              style={{ 
+                width: '100%',
+                margin: '0 auto',
+                display: 'block',
+              }} 
+            />
+          </Box>
 
-      {/* Content */}
-      <Container maxW="container.xl" position="relative" zIndex={2}>
-        <Flex 
-          height="100vh"
-          direction={{ base: 'column', md: 'row' }}
-          justify="space-between" 
-          align={{ base: 'center', md: 'center' }}
-          gap={{ base: 10, md: 10 }}
-          px={{ base: 4, md: 0 }}
-        >
-          {/* Text content */}
-          <Stack 
-            spacing={6} 
-            flex="1"
-            textAlign={{ base: 'center', md: 'left' }}
-            mb={{ base: 8, md: 0 }}
+          {/* Text and Buttons Container */}
+          <Flex 
+            direction={{ base: 'column', md: 'row' }}
+            gap={{ base: 16, md: 8 }}
+            justify="space-between"
+            align={{ base: 'stretch', md: 'end' }}
           >
-            <Heading 
-              color="white"
-              size={{ base: '2xl', md: '4xl' }}
-              fontWeight="bold"
-              lineHeight="1.2"
-            >
-              Awesome Retreat Venues
-            </Heading>
-            <Text 
-              color="white"
-              fontSize={{ base: 'xl', md: '2xl' }}
-              maxW="xl"
-            >
-              Browse our favourite venues for meaningful and participatory team retreats and offsites.
-            </Text>
-          </Stack>
+            {/* Text Content */}
+            <VStack spacing={6} align="left" flex="1">
+              <Heading 
+                as="h1" 
+                fontSize={{ base: "4xl", md: "6xl" }}
+                fontWeight="black"
+                fontFamily="heading"
+                lineHeight="1.1"
+              >
+                A database of<br />
+                retreat venues
+              </Heading>
+              <Text 
+                fontSize={{ base: "xl", md: "2xl" }}
+                maxW="600px"
+                lineHeight="1.4"
+              >
+                Browse our favourite venues for participatory team retreats and offsites.
+                Put together and reviewed by their users.
+              </Text>
+            </VStack>
 
-          {/* Buttons */}
-          <Stack 
-            spacing={4} 
-            width={{ base: "100%", md: "300px" }}
-            maxW={{ base: "400px", md: "none" }}
-          >
-            <Button
-              size="lg"
-              bg="white"
-              color="brand.orange"
-              _hover={{
-                bg: 'brand.cornsilk',
-              }}
-              onClick={() => navigate('/gallery')}
-              height={{ base: "50px", md: "60px" }}
-              fontSize={{ base: "lg", md: "xl" }}
+            {/* Navigation Buttons */}
+            <Stack 
+              spacing={1} 
+              width={{ base: "100%", md: "400px" }}
             >
-              Explore Venues
-            </Button>
-            <Button
-              size="lg"
-              bg="white"
-              color="brand.orange"
-              _hover={{
-                bg: 'brand.cornsilk',
-              }}
-              onClick={handleSubmitVenue}
-              height={{ base: "50px", md: "60px" }}
-              fontSize={{ base: "lg", md: "xl" }}
-            >
-              Submit Venue
-            </Button>
-            <Button
-              size="lg"
-              bg="white"
-              color="brand.orange"
-              _hover={{
-                bg: 'brand.cornsilk',
-              }}
-              onClick={() => navigate('/about')}
-              height={{ base: "50px", md: "60px" }}
-              fontSize={{ base: "lg", md: "xl" }}
-            >
-              We Are Facilitators
-            </Button>
-          </Stack>
-        </Flex>
+              <CustomButton to="/gallery" bg="cornsilk">
+                Browse venues
+              </CustomButton>
+
+              <CustomButton 
+                isExternal 
+                onClick={handleSubmitVenue}
+              >
+                Submit new venue
+              </CustomButton>
+
+              <CustomButton to="/about">
+                We are facilitators
+              </CustomButton>
+            </Stack>
+          </Flex>
+        </VStack>
       </Container>
-    </Box>
+    </Flex>
   )
 }
 

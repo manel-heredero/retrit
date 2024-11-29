@@ -9,10 +9,8 @@ function Navbar() {
   return (
     <>
       <Box 
-        px={4} 
-        bg="brand.cornsilk" 
+        bg="white"
         py={4} 
-        boxShadow="sm" 
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box>

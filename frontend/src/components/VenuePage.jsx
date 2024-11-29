@@ -7,23 +7,18 @@ import {
   Stack,
   VStack,
   HStack,
-  Badge,
   Grid,
   GridItem,
   Button,
-  IconButton,
-  useBreakpointValue,
   Container,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon, StarIcon, CheckIcon } from '@chakra-ui/icons'; 
 
 function VenuePage({ venue }) {
-  // Helper function to handle empty values
   const getDisplayValue = (value) => {
     return value || 'Not specified';
   };
 
-  // Helper function for star ratings
   const renderStars = (rating) => {
     return Array(5)
       .fill('')
@@ -31,33 +26,33 @@ function VenuePage({ venue }) {
         <StarIcon
           key={index}
           color={index < rating ? "orange.400" : "gray.300"}
+          boxSize={{ base: 4, md: 5 }}
         />
       ));
   };
 
-  
   return (
-    <Container maxW="container.xl" py={8}>
-      <VStack spacing={8} align="stretch">
-        {/* Header section (unchanged) */}
-        <VStack spacing={4} align="stretch">
+    <Container maxW="container.xl" py={4}>
+      <VStack spacing={{ base: 4, md: 8 }} align="stretch">
+        {/* Header section */}
+        <VStack spacing={2} align="stretch">
           <Heading 
             as="h1" 
-            size="2xl" 
+            size={{ base: "xl", md: "2xl" }}
             color="darkgreen.900"
           >
             {venue.venueName}
           </Heading>
-          <Text fontSize="2xl">
+          <Text fontSize={{ base: "lg", md: "2xl" }}>
             {venue.countryName}
           </Text>
         </VStack>
 
-        {/* Grid with responsiveness */}
+        {/* Grid section */}
         <Grid 
           templateColumns={{
-            base: "1fr",          // Single column on mobile
-            md: "repeat(2, 1fr)"  // Two columns on medium screens and up
+            base: "1fr",
+            md: "repeat(2, 1fr)"
           }} 
           gap={6}
         >
@@ -92,6 +87,7 @@ function VenuePage({ venue }) {
             </VStack>
           </GridItem>
         </Grid>
+
         {/* Image section */}
         <Box 
           borderRadius="lg" 
@@ -104,14 +100,30 @@ function VenuePage({ venue }) {
             w="100%"
             h="auto"
             objectFit="cover"
-            fallback={<Box bg="gray.100" h="400px" />}
+            fallback={<Box bg="gray.100" h={{ base: "250px", md: "400px" }} />}
           />
         </Box>
+
+        {/* Description section */}
+        {venue.description && (
+          <Box>
+            <Text 
+              fontSize={{ base: "md", md: "lg" }}
+              color="gray.700"
+              whiteSpace="pre-wrap"
+              lineHeight="tall"
+            >
+              {venue.description}
+            </Text>
+          </Box>
+        )}
+
         {/* Website and Google Maps links section */}
         <Stack 
           direction={{ base: 'column', md: 'row' }} 
-          spacing={4} 
+          spacing={3} 
           align="stretch"
+          w="100%"
         >
           {venue.venueWebsite && (
             <Button
@@ -119,9 +131,8 @@ function VenuePage({ venue }) {
               variant="outline"
               colorScheme="blue"
               onClick={() => window.open(venue.venueWebsite, '_blank')}
-              borderWidth="1px"
-              size="md"
-              flex={{ base: '1', md: '0 auto' }}
+              size={{ base: "md", md: "md" }}
+              w="100%"
             >
               Venue website
             </Button>
@@ -132,44 +143,63 @@ function VenuePage({ venue }) {
               variant="outline"
               colorScheme="blue"
               onClick={() => window.open(venue.googleMapsLink, '_blank')}
-              borderWidth="1px"
-              size="md"
-              flex={{ base: '1', md: '0 auto' }}
+              size={{ base: "md", md: "md" }}
+              w="100%"
             >
               Google Maps
             </Button>
           )}
         </Stack>
+
         {/* Ratings section */}
-        <VStack spacing={4} align="stretch">
-          <HStack spacing={2}>
-            <Text fontWeight="semibold" w="140px">Overall Rating</Text>
-            <HStack spacing={1}>{renderStars(venue.overallRating)}</HStack>
-          </HStack>
+        <VStack spacing={3} align="stretch">
+          {/* Rating items */}
+          {[
+            { label: 'Overall Rating', value: venue.overallRating },
+            { label: 'Common Spaces', value: venue.commonSpacesRating },
+            { label: 'Food', value: venue.foodRating },
+            { label: 'Sleeping Comfort', value: venue.sleepingComfortRating }
+          ].map((item) => (
+            <Stack
+              key={item.label}
+              direction={{ base: 'column', md: 'row' }}
+              spacing={{ base: 1, md: 2 }}
+              align={{ base: 'start', md: 'center' }}
+            >
+              <Text 
+                fontWeight="semibold" 
+                w={{ base: "auto", md: "140px" }}
+                fontSize={{ base: "sm", md: "md" }}
+              >
+                {item.label}
+              </Text>
+              <HStack spacing={1}>
+                {renderStars(item.value)}
+              </HStack>
+            </Stack>
+          ))}
 
-          <HStack spacing={2}>
-            <Text fontWeight="semibold" w="140px">Common Spaces</Text>
-            <HStack spacing={1}>{renderStars(venue.commonSpacesRating)}</HStack>
-          </HStack>
-
-          <HStack spacing={2}>
-            <Text fontWeight="semibold" w="140px">Food</Text>
-            <HStack spacing={1}>{renderStars(venue.foodRating)}</HStack>
-          </HStack>
-
-          <HStack spacing={2}>
-            <Text fontWeight="semibold" w="140px">Sleeping Comfort</Text>
-            <HStack spacing={1}>{renderStars(venue.sleepingComfortRating)}</HStack>
-          </HStack>
-
-          <HStack spacing={2}>
-            <Text fontWeight="semibold" w="140px">Facilitation Ready</Text>
+          {/* Facilitation Ready section */}
+          <Stack
+            direction={{ base: 'column', md: 'row' }}
+            spacing={{ base: 1, md: 2 }}
+            align={{ base: 'start', md: 'center' }}
+          >
+            <Text 
+              fontWeight="semibold" 
+              w={{ base: "auto", md: "140px" }}
+              fontSize={{ base: "sm", md: "md" }}
+            >
+              Facilitation Ready
+            </Text>
             {venue.reviewed ? (
-              <CheckIcon color="green.500" boxSize={5} />
+              <CheckIcon color="green.500" boxSize={{ base: 4, md: 5 }} />
             ) : (
-              <Text color="gray.500">Not yet reviewed</Text>
+              <Text color="gray.500" fontSize={{ base: "sm", md: "md" }}>
+                Not yet reviewed
+              </Text>
             )}
-          </HStack>
+          </Stack>
         </VStack>
       </VStack>
     </Container>

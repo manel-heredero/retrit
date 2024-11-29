@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Box, Spinner, Text, VStack } from '@chakra-ui/react';
 import VenuePage from '../components/VenuePage';
+import FacilitationServices from '../components/FacilitationServices';
 
 function Venue() {
   const { id } = useParams();
@@ -67,7 +68,12 @@ function Venue() {
     );
   }
 
-  return <VenuePage venue={venue} />;
+  return (
+    <>
+      <VenuePage venue={venue} />
+      <FacilitationServices />
+    </>
+  );
 }
 
 export default Venue;
