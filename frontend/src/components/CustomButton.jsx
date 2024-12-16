@@ -1,20 +1,6 @@
 import React from 'react';
-import { Button, Box } from '@chakra-ui/react';
+import { Button, Box, useBreakpointValue } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-// Chakra Icons
-import { ArrowForwardIcon, ArrowRightIcon } from '@chakra-ui/icons';
-// React Icons
-import { 
-  HiArrowRight, 
-  HiArrowNarrowRight,
-  HiOutlineArrowRight,
-  HiOutlineArrowNarrowRight 
-} from 'react-icons/hi';
-import { 
-  BsArrowRight,
-  BsArrowRightShort,
-  BsArrowRightCircle 
-} from 'react-icons/bs';
 
 const CustomButton = ({ 
   children, 
@@ -23,67 +9,50 @@ const CustomButton = ({
   isExternal = false,
   borderColor = "black",
   bg = "transparent",
+  rightIcon,
   ...props 
 }) => {
-  // Base button styles
-  const buttonStyles = {
-    variant: "outline",
-    size: "lg",
-    height: "60px",
-    borderWidth: "2px",
-    borderRadius: "0",
-    borderColor: borderColor,
-    bg: bg,
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
-    px: 6,
-    textAlign: "left",
-    fontWeight: "normal",
-    _hover: {
-      bg: 'gray.50',
-      transform: 'translateY(-2px)',
-      transition: 'all 0.2s',
-    },
-    rightIcon: <HiArrowRight size="24px" />,
-    ...props
-  };
+  // Use breakpointValue to conditionally render the rightIcon
+  const showIcon = useBreakpointValue({ base: false, md: true });
 
-  // If it's an external link
-  if (isExternal) {
-    return (
-      <Button
-        {...buttonStyles}
-        onClick={onClick}
-      >
-        {children}
-      </Button>
-    );
-  }
-
-  // If it's an internal route
-  if (to) {
-    return (
-      <Button
-        as={Link}
-        to={to}
-        {...buttonStyles}
-      >
-        {children}
-      </Button>
-    );
-  }
-
-  // If it's just a button with onClick
-  return (
+  const renderButton = (buttonProps) => (
     <Button
-      {...buttonStyles}
-      onClick={onClick}
+      variant="outline"
+      size="lg"
+      height="60px"
+      borderWidth="2px"
+      borderRadius="0"
+      borderColor={borderColor}
+      bg={bg}
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      width="100%"
+      px={6}
+      textAlign="left"
+      fontWeight="normal"
+      _hover={{
+        bg: 'gray.50',
+        transform: 'translateY(-2px)',
+        transition: 'all 0.2s',
+      }}
+      {...buttonProps}
+      {...props}
     >
       {children}
+      {showIcon && rightIcon}
     </Button>
   );
+
+  if (isExternal) {
+    return renderButton({ onClick });
+  }
+
+  if (to) {
+    return renderButton({ as: Link, to });
+  }
+
+  return renderButton({ onClick });
 };
 
 export default CustomButton;

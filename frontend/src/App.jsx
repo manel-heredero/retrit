@@ -8,6 +8,7 @@ import Blog from './pages/Blog'
 import Article from './pages/Article'
 import Venue from './pages/Venue'
 import Gallery from './pages/Gallery'
+import Services from './pages/Services'
 
 /**
  * Main App component that serves as the root of the application.
@@ -44,6 +45,7 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<Article />} />
               <Route path="/venue/:id" element={<Venue />} />
+              <Route path="/services" element={<Services />} />
             </Routes>
           </Box>
         </Container>

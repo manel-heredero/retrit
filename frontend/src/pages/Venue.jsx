@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Box, Spinner, Text, VStack } from '@chakra-ui/react';
 import VenuePage from '../components/VenuePage';
 import FacilitationServices from '../components/FacilitationServices';
+import Footer from '../components/Footer';
 
 function Venue() {
   const { id } = useParams();
@@ -16,12 +17,10 @@ function Venue() {
       try {
         console.log('Attempting to fetch venue with ID:', id);
         
-        // Make sure we have a valid ID
         if (!id) {
           throw new Error('No venue ID provided');
         }
 
-        // Use VenueID instead of MongoDB _id
         const response = await axios.get(`/api/venues/byVenueId/${id}`);
         console.log('API Response:', response.data);
         
@@ -72,6 +71,7 @@ function Venue() {
     <>
       <VenuePage venue={venue} />
       <FacilitationServices />
+      <Footer />
     </>
   );
 }
