@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Container, Heading, Text, VStack, SimpleGrid, useToast } from '@chakra-ui/react';
-import { CopyIcon, CheckIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import { CopyIcon, CheckIcon } from '@chakra-ui/icons';
 import Footer from '../components/Footer';
 import CustomButton from '../components/CustomButton';
 

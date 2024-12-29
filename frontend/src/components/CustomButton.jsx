@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Box, useBreakpointValue } from '@chakra-ui/react';
+import { Button, Box, Flex } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 const CustomButton = ({ 
@@ -12,47 +12,68 @@ const CustomButton = ({
   rightIcon,
   ...props 
 }) => {
-  // Use breakpointValue to conditionally render the rightIcon
-  const showIcon = useBreakpointValue({ base: false, md: true });
+  const buttonStyles = {
+    variant: "outline",
+    size: "lg",
+    height: "60px",
+    borderWidth: "2px",
+    borderRadius: "0",
+    borderColor: borderColor,
+    bg: bg,
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    px: 6,
+    textAlign: "left",
+    fontWeight: "normal",
+    color: "black",
+    _hover: {
+      bg: 'gray.50',
+      transform: 'translateY(-2px)',
+      transition: 'all 0.2s',
+    },
+    ...props
+  };
 
-  const renderButton = (buttonProps) => (
-    <Button
-      variant="outline"
-      size="lg"
-      height="60px"
-      borderWidth="2px"
-      borderRadius="0"
-      borderColor={borderColor}
-      bg={bg}
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-      width="100%"
-      px={6}
-      textAlign="left"
-      fontWeight="normal"
-      _hover={{
-        bg: 'gray.50',
-        transform: 'translateY(-2px)',
-        transition: 'all 0.2s',
-      }}
-      {...buttonProps}
-      {...props}
-    >
+  const buttonContent = (
+    <Flex width="100%" justify="space-between" align="center">
       {children}
-      {showIcon && rightIcon}
-    </Button>
+      {rightIcon && <Box ml={2}>{rightIcon}</Box>}
+    </Flex>
   );
 
   if (isExternal) {
-    return renderButton({ onClick });
+    return (
+      <Button
+        {...buttonStyles}
+        onClick={onClick}
+      >
+        {buttonContent}
+      </Button>
+    );
   }
 
   if (to) {
-    return renderButton({ as: Link, to });
+    return (
+      <Button
+        as={Link}
+        to={to}
+        {...buttonStyles}
+      >
+        {buttonContent}
+      </Button>
+    );
   }
 
-  return renderButton({ onClick });
+  return (
+    <Button
+      {...buttonStyles}
+      onClick={onClick}
+    >
+      {buttonContent}
+    </Button>
+  );
 };
 
 export default CustomButton;
