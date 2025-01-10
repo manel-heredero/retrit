@@ -8,6 +8,11 @@ import articleRoutes from './routes/article.routes.js';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import mongoSanitize from 'express-mongo-sanitize';
+import logger from './config/logger.js';
+import compression from 'compression';
 
 // Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -28,8 +33,46 @@ app.use('/uploads', express.static(path.join(__dirname, 'data/uploads')));
 // Middleware
 app.use(cors({
     origin: process.env.FRONTEND_URL,
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+// Security middleware
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            imgSrc: ["'self'", "https:", "data:", "https://i.postimg.cc"],
+            scriptSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'"],
+            fontSrc: ["'self'", "https:", "data:"],
+            connectSrc: ["'self'"]
+        }
+    },
+    crossOriginEmbedderPolicy: false,
+    crossOriginResourcePolicy: { policy: "cross-origin" }
+}));
+app.use(mongoSanitize());
+
+// Compression middleware
+app.use(compression({
+    filter: (req, res) => {
+        if (req.headers['x-no-compression']) {
+            return false;
+        }
+        return compression.filter(req, res);
+    },
+    level: 6 // Default compression level
+}));
+
+// Rate limiting
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per windowMs
+    message: 'Too many requests from this IP, please try again later.'
+});
+app.use(limiter);
 
 // Health check route
 app.get('/api/health', (req, res) => {
@@ -48,17 +91,17 @@ app.get('/test', (req, res) => {
 
 // Debug middleware to log all requests
 app.use((req, res, next) => {
-    console.log(`${req.method} ${req.url}`);
+    logger.info(`${req.method} ${req.url}`);
     next();
 });
 
 // Routes
-app.use('/api/blog', articleRoutes); // Move this before venueRoutes
+app.use('/api/blog', articleRoutes);
 app.use('/api', venueRoutes);
 
 // 404 handler for undefined routes
 app.use('*', (req, res) => {
-    console.log('404 - Route not found:', req.originalUrl);
+    logger.warn('404 - Route not found:', req.originalUrl);
     res.status(404).json({
         success: false,
         message: `Route ${req.originalUrl} not found`
@@ -67,7 +110,7 @@ app.use('*', (req, res) => {
 
 // Error handling
 app.use((err, req, res, next) => {
-    console.error('Error:', err.stack);
+    logger.error('Error:', { error: err.message, stack: err.stack });
     res.status(500).json({
         success: false,
         message: 'Something went wrong!',
@@ -82,23 +125,23 @@ const startServer = async () => {
         await connectDB();
         
         // Log database connection
-        console.log('Connected to MongoDB');
+        logger.info('Connected to MongoDB');
         
         // Log all registered routes
-        console.log('\nRegistered Routes:');
+        logger.info('\nRegistered Routes:');
         app._router.stack.forEach(r => {
             if (r.route && r.route.path) {
-                console.log(`${Object.keys(r.route.methods)} ${r.route.path}`);
+                logger.info(`${Object.keys(r.route.methods)} ${r.route.path}`);
             }
         });
         
         app.listen(PORT, () => {
-            console.log(`\nServer running on http://localhost:${PORT}`);
-            console.log(`Test the server: http://localhost:${PORT}/test`);
-            console.log(`Articles endpoint: http://localhost:${PORT}/api/blog`);
+            logger.info(`\nServer running on http://localhost:${PORT}`);
+            logger.info(`Test the server: http://localhost:${PORT}/test`);
+            logger.info(`Articles endpoint: http://localhost:${PORT}/api/blog`);
         });
     } catch (error) {
-        console.error('Failed to start server:', error);
+        logger.error('Failed to start server:', error);
         process.exit(1);
     }
 };

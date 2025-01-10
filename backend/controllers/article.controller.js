@@ -1,36 +1,52 @@
+import mongoose from 'mongoose';
 import Article from '../models/article.model.js';
 
 // Get all articles with pagination
 export const getArticles = async (req, res) => {
   try {
-    console.log('Fetching articles...'); // Debug log
+    console.log('\n--- Article Request Details ---');
+    console.log('Environment:', process.env.NODE_ENV);
+    console.log('Database:', mongoose.connection.db.databaseName);
+    console.log('Collection:', Article.collection.name);
+
+    // First, check if any articles exist
+    const count = await Article.countDocuments();
+    console.log('Total articles in database:', count);
+
+    // If articles exist, proceed with pagination
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 6;
     const skip = (page - 1) * limit;
 
     const articles = await Article.find()
       .sort({ date: -1 })
-      .skip(skip)
-      .limit(limit);
+      .select('-__v') // Exclude version field
+      .lean(); // Convert to plain JavaScript object
 
-    console.log('Found articles:', articles); // Debug log
-
-    const total = await Article.countDocuments();
+    console.log('Articles found:', articles.length);
+    if (articles.length > 0) {
+      console.log('First article:', {
+        title: articles[0].title,
+        slug: articles[0].slug,
+        date: articles[0].date
+      });
+    }
 
     res.json({
       success: true,
       data: {
         articles,
         currentPage: page,
-        totalPages: Math.ceil(total / limit),
-        totalArticles: total
+        totalPages: Math.ceil(count / limit),
+        totalArticles: count
       }
     });
   } catch (error) {
     console.error('Error in getArticles:', error);
     res.status(500).json({
       success: false,
-      message: error.message
+      message: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 };
