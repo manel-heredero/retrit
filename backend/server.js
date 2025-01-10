@@ -1,6 +1,7 @@
 // server.js
 import express from 'express';
 import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 import { connectDB } from './config/db.js';
 import venueRoutes from './routes/venue.routes.js';
 import articleRoutes from './routes/article.routes.js';
@@ -12,7 +13,11 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config();
+dotenv.config({
+    path: process.env.NODE_ENV === 'production' 
+      ? '.env.production'
+      : '.env.development'
+  });
 
 const app = express();
 
@@ -21,11 +26,20 @@ app.use('/data', express.static(path.join(__dirname, 'data')));
 app.use('/uploads', express.static(path.join(__dirname, 'data/uploads')));
 
 // Middleware
-app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173', // frontend URL
+    origin: process.env.FRONTEND_URL,
     credentials: true
-  }));
+}));
+
+// Health check route
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'ok', 
+    environment: process.env.NODE_ENV,
+    timestamp: new Date().toISOString(),
+    mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
+  });
+});
 
 // Test route
 app.get('/test', (req, res) => {
@@ -80,8 +94,8 @@ const startServer = async () => {
         
         app.listen(PORT, () => {
             console.log(`\nServer running on http://localhost:${PORT}`);
-            console.log('Test the server: http://localhost:${PORT}/test');
-            console.log('Articles endpoint: http://localhost:${PORT}/api/blog');
+            console.log(`Test the server: http://localhost:${PORT}/test`);
+            console.log(`Articles endpoint: http://localhost:${PORT}/api/blog`);
         });
     } catch (error) {
         console.error('Failed to start server:', error);
