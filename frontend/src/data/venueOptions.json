@@ -13,10 +13,10 @@
   ],
   "capacityOptions": [
     "Up to 7 people",
-    "Between 7 and 15 people",
-    "Between 15 and 30 people",
-    "Between 30 and 60 people",
-    "Between 60 and 100 people",
+    "Somewhere between 7 and 15 people",
+    "Somewhere between 15 and 30 people",
+    "Somewhere between 30 and 60 people",
+    "Somewhere between 60 and 100 people",
     "More than 100 people"
   ],
   "selfHostingLevel": [
