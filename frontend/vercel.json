@@ -4,5 +4,12 @@
         "source": "/(.*)",
         "destination": "/index.html"
       }
+    ],
+    "redirects": [
+      {
+        "source": "https://retr.it/:path*",
+        "destination": "https://www.retr.it/:path*",
+        "permanent": true
+      }
     ]
-  }
+}
