@@ -1,24 +1,8 @@
 {
-    "routes": [
-      { 
-        "src": "/gallery",
-        "dest": "/index.html"
-      },
-      { 
-        "src": "/venue/.*",
-        "dest": "/index.html"
-      },
+    "rewrites": [
       {
-        "src": "/blog",
-        "dest": "/index.html"
-      },
-      {
-        "src": "/blog/.*",
-        "dest": "/index.html"
-      },
-      { 
-        "src": "/(.*)", 
-        "dest": "/$1"
+        "source": "/(.*)",
+        "destination": "/index.html"
       }
     ]
-}
+  }

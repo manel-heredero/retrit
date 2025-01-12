@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666662 8.4666669"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="favicon.svg">
+  <style
+     id="style833"></style>
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.919596"
+     inkscape:cx="50.324223"
+     inkscape:cy="52.860098"
+     inkscape:document-units="mm"
+     inkscape:current-layer="text837"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="3840"
+     inkscape:window-height="2066"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       aria-label="retr.it"
+       id="text837"
+       style="font-style:normal;font-weight:normal;font-size:54.1294px;line-height:1.25;font-family:sans-serif;fill:#606c38;fill-opacity:1;stroke:none;stroke-width:1.35324">
+      <path
+         d="m 4.252329,7.9375 c 2.0135466,0 3.685171,-1.6678446 3.685171,-3.7235602 0,-2.0169286 -1.6716244,-3.68477313 -3.685171,-3.68477313 -2.051538,0 -3.72316233,1.66784453 -3.72316233,3.68477313 0,2.0557156 1.67162433,3.7235602 3.72316233,3.7235602 z"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:54.1294px;font-family:'Averta Std';-inkscape-font-specification:'Averta Std, Heavy';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#dda15e;fill-opacity:1;stroke-width:0.959683"
+         id="path847" />
+    </g>
+  </g>
+</svg>

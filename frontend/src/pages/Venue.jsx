@@ -6,6 +6,8 @@ import VenuePage from '../components/VenuePage';
 import FacilitationServices from '../components/FacilitationServices';
 import Footer from '../components/Footer';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 function Venue() {
   const { id } = useParams();
   const [venue, setVenue] = useState(null);
@@ -21,7 +23,7 @@ function Venue() {
           throw new Error('No venue ID provided');
         }
 
-        const response = await axios.get(`/api/venues/byVenueId/${id}`);
+        const response = await axios.get(`${API_URL}/api/venues/byVenueId/${id}`);
         console.log('API Response:', response.data);
         
         if (response.data.success && response.data.data) {
