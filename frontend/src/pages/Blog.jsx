@@ -11,6 +11,8 @@ import {
 import ArticleCard from '../components/ArticleCard';
 import Pagination from '../components/Pagination';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 function Blog() {
   const [articles, setArticles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,8 +24,7 @@ function Blog() {
     const fetchArticles = async () => {
       try {
         setIsLoading(true);
-        const baseUrl = import.meta.env.DEV ? 'http://localhost:5000' : '';
-        const response = await fetch(`${baseUrl}/api/blog?page=${currentPage}&limit=6`);
+        const response = await fetch(`${API_URL}/api/blog?page=${currentPage}&limit=6`);
         
         if (!response.ok) {
           throw new Error('Failed to fetch articles');

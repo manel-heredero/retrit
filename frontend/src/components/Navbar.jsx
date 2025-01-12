@@ -22,7 +22,7 @@ function Navbar() {
           <Spacer />
           <Flex alignItems={'center'} display={{ base: 'none', md: 'flex' }}>
             <Link as={RouterLink} to="/gallery" mr={4} color="brand.blue" _hover={{ color: 'brand.orange' }}>
-              Gallery
+              Database
             </Link>
             <Link as={RouterLink} to="/about" mr={4} color="brand.blue" _hover={{ color: 'brand.orange' }}>
               About
