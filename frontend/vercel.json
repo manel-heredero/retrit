@@ -1,15 +1,24 @@
 {
-    "rewrites": [
+    "routes": [
+      { 
+        "src": "/gallery",
+        "dest": "/index.html"
+      },
+      { 
+        "src": "/venue/.*",
+        "dest": "/index.html"
+      },
       {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
-    ],
-    "redirects": [
+        "src": "/blog",
+        "dest": "/index.html"
+      },
       {
-        "source": "https://retr.it/:path*",
-        "destination": "https://www.retr.it/:path*",
-        "permanent": true
+        "src": "/blog/.*",
+        "dest": "/index.html"
+      },
+      { 
+        "src": "/(.*)", 
+        "dest": "/$1"
       }
     ]
 }
