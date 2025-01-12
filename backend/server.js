@@ -22,7 +22,7 @@ dotenv.config({
     path: process.env.NODE_ENV === 'production' 
       ? '.env.production'
       : '.env.development'
-  });
+});
 
 const app = express();
 
@@ -76,12 +76,12 @@ app.use(limiter);
 
 // Health check route
 app.get('/api/health', (req, res) => {
-  res.status(200).json({ 
-    status: 'ok', 
-    environment: process.env.NODE_ENV,
-    timestamp: new Date().toISOString(),
-    mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
-  });
+    res.status(200).json({ 
+        status: 'ok', 
+        environment: process.env.NODE_ENV,
+        timestamp: new Date().toISOString(),
+        mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
+    });
 });
 
 // Test route
@@ -119,6 +119,7 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
+const HOST = '0.0.0.0';
 
 const startServer = async () => {
     try {
@@ -135,10 +136,14 @@ const startServer = async () => {
             }
         });
         
-        app.listen(PORT, () => {
-            logger.info(`\nServer running on http://localhost:${PORT}`);
-            logger.info(`Test the server: http://localhost:${PORT}/test`);
-            logger.info(`Articles endpoint: http://localhost:${PORT}/api/blog`);
+        app.listen(PORT, HOST, () => {
+            const baseUrl = process.env.NODE_ENV === 'production'
+                ? process.env.API_URL || `https://${process.env.APP_NAME}.herokuapp.com`
+                : `http://${HOST}:${PORT}`;
+        
+            logger.info(`\nServer running on ${baseUrl}`);
+            logger.info(`Test the server: ${baseUrl}/test`);
+            logger.info(`Articles endpoint: ${baseUrl}/api/blog`);
         });
     } catch (error) {
         logger.error('Failed to start server:', error);
