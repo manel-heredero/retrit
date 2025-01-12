@@ -15,13 +15,16 @@ function Hero() {
         <Container maxW="container.xl">
           <VStack spacing={16} align="stretch">
             {/* Logo */}
-            <Box maxW={{ base: '100%', md: '70%' }} mx="auto">
+            <Box 
+              maxW={{ base: '100%', md: '70%' }}
+              ml={{ base: 'auto', md: '0' }}
+              mr={{ base: 'auto', md: '0' }}
+            >
               <img 
                 src="/retrit.svg" 
                 alt="retr.it" 
                 style={{ 
                   width: '100%',
-                  margin: '0 auto',
                   display: 'block',
                 }} 
               />

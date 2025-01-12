@@ -13,6 +13,8 @@ import {
   Spinner
 } from '@chakra-ui/react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 function Article() {
   const { slug } = useParams();
   const [article, setArticle] = useState(null);
@@ -35,8 +37,7 @@ function Article() {
     const fetchArticle = async () => {
       try {
         setIsLoading(true);
-        const baseUrl = import.meta.env.DEV ? 'http://localhost:5000' : '';
-        const response = await fetch(`${baseUrl}/api/blog/${slug}`);
+        const response = await fetch(`${API_URL}/api/blog/${slug}`);
         
         if (!response.ok) {
           throw new Error('Article not found');
