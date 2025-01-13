@@ -10,6 +10,8 @@ import Venue from './pages/Venue'
 import Gallery from './pages/Gallery'
 import Services from './pages/Services'
 import ScrollToTop from './components/ScrollToTop'
+import CookieConsent from './components/CookieConsent'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 /**
  * Main App component that serves as the root of the application.
@@ -49,10 +51,14 @@ function App() {
               <Route path="/blog/:slug" element={<Article />} />
               <Route path="/venue/:id" element={<Venue />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Routes>
           </Box>
         </Container>
       )}
+
+      {/* Cookie Consent Banner */}
+      <CookieConsent />
     </Box>
   )
 }
