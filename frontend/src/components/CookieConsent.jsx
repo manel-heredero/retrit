@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Text, Button, Stack } from '@chakra-ui/react';
+import { initGA, logPageView } from '../utils/analytics';
 
 function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +15,8 @@ function CookieConsent() {
   const handleAccept = () => {
     localStorage.setItem('cookieConsent', 'accepted');
     setIsVisible(false);
-    // Here you would initialize Google Analytics
+    initGA();
+    logPageView();
   };
 
   const handleDecline = () => {

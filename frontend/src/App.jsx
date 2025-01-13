@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, Container } from '@chakra-ui/react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
@@ -12,6 +12,7 @@ import Services from './pages/Services'
 import ScrollToTop from './components/ScrollToTop'
 import CookieConsent from './components/CookieConsent'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import { initGA, logPageView } from './utils/analytics'
 
 /**
  * Main App component that serves as the root of the application.
@@ -20,6 +21,23 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 function App() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+
+  // Initialize GA when component mounts
+  useEffect(() => {
+    const hasConsent = localStorage.getItem('cookieConsent') === 'accepted';
+    if (hasConsent) {
+      initGA();
+      logPageView();
+    }
+  }, []);
+
+  // Log page views on route change
+  useEffect(() => {
+    const hasConsent = localStorage.getItem('cookieConsent') === 'accepted';
+    if (hasConsent) {
+      logPageView();
+    }
+  }, [location]);
 
   return (
     <Box bg="brand.seasalt" minHeight="100vh">
