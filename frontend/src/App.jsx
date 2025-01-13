@@ -9,6 +9,7 @@ import Article from './pages/Article'
 import Venue from './pages/Venue'
 import Gallery from './pages/Gallery'
 import Services from './pages/Services'
+import ScrollToTop from './components/ScrollToTop'
 
 /**
  * Main App component that serves as the root of the application.
@@ -20,6 +21,8 @@ function App() {
 
   return (
     <Box bg="brand.seasalt" minHeight="100vh">
+      <ScrollToTop />
+      
       {/* Only show Navbar if not on home page */}
       {!isHomePage && (
         <Box bg="brand.seasalt" position="sticky" top={0} zIndex={10}>
