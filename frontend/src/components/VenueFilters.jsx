@@ -39,6 +39,8 @@ function VenueFilters({ onFilter }) {
   return (
     <Box 
       mb={6} 
+      mt={8}  // Added top margin
+      pt={4}  // Added top padding
       bg="brand.orange" 
       p={6} 
       borderRadius="lg"

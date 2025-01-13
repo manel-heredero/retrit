@@ -41,7 +41,7 @@ const FacilitationServices = () => {
                 borderColor="darkgreen.900"
                 bg="white"
               >
-                How does it work?
+                Find out more
               </CustomButton>
             </Box>
           </Box>
