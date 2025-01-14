@@ -90,8 +90,8 @@ function Services() {
               overflow="hidden"
             >
               <img 
-                src="/davidandtomomi.png" 
-                alt="David and Tomomi" 
+                src="/helene.jpg" 
+                alt="Helene in Munich" 
                 style={{
                   width: '100%',
                   height: '100%',
